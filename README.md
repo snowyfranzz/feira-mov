@@ -809,7 +809,7 @@
 
         <div class="categoria">
 
-            <div class="icone">🍏</div>
+            <div class="icone"> <img src = "frutas.jpg"></div>
 
             Frutas
 
@@ -818,7 +818,7 @@
 
         <div class="categoria">
 
-            <div class="icone">🌿</div>
+            <div class="icone"> <img src = "verduras.jpg"></div>
 
             Verduras
 
@@ -827,7 +827,7 @@
 
         <div class="categoria">
 
-            <div class="icone">🥛</div>
+            <div class="icone"> <img src = "laticinios.jpg"></div>
 
             Laticínios
 
@@ -836,7 +836,7 @@
 
         <div class="categoria">
 
-            <div class="icone">🌾</div>
+            <div class="icone"> <img src = "graos.jpg"></div>
 
             Grãos
 
@@ -845,7 +845,7 @@
 
         <div class="categoria">
 
-            <div class="icone">✨</div>
+            <div class="icone"> <img src = "organicos.jpg"></div>
 
             Orgânicos
 
@@ -854,7 +854,7 @@
 
         <div class="categoria">
 
-            <div class="icone">🧺</div>
+            <div class="icone"> <img src = "artesanais.jpg"></div>
 
             Artesanais
 
