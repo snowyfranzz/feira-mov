@@ -598,6 +598,9 @@
 <div class="container">
 
 
+<div class="container">
+
+
     <!-- HEADER -->
 
     <header>
@@ -605,24 +608,28 @@
         <button class="menu"
                 id="botao-menu">
 
-            ☰
+            <img src = "3lines.jpg"> 
 
         </button>
 
 
         <div class="logo">
 
-            🌿 Feira<span>Mov</span>
+             <img 
+            src="logo_colorido_texto.svg" 
+            alt="Logo"
+            class="logo"
+        >
 
         </div>
 
 
         <div class="header-icons">
 
-            <span>⌕</span>
-            <span>♙</span>
-            <span>🛒</span>
-            <span>🔔</span>
+            <span><img src = "pesquisa.jpg"> </span>
+            <span><img src = "perfil.jpg"> </span>
+            <span><img src = "carrinho.jpg"> </span>
+            <span><img src = "notif.jpg"> </span>
 
         </div>
 
@@ -649,7 +656,7 @@
             <a href="#"
                class="menu-item ativo">
 
-                <span class="menu-icone">⌂</span>
+                <span class="menu-icone"><img src = "home"> </span>
 
                 Início
 
@@ -659,7 +666,7 @@
             <a href="#"
                class="menu-item">
 
-                <span class="menu-icone">⌕</span>
+                <span class="menu-icone"><img src = "pesquisa.jpg"> </span>
 
                 Busca
 
@@ -669,7 +676,7 @@
             <a href="#feiras"
                class="menu-item">
 
-                <span class="menu-icone">▣</span>
+                <span class="menu-icone"><img src = "feiras.jpg"> </span>
 
                 Feiras
 
@@ -679,7 +686,7 @@
             <a href="#"
                class="menu-item">
 
-                <span class="menu-icone">⌾</span>
+                <span class="menu-icone"><img src = "loc.jpg"> </span>
 
                 Eventos
 
@@ -689,7 +696,7 @@
             <a href="#produtores"
                class="menu-item">
 
-                <span class="menu-icone">♟</span>
+                <span class="menu-icone"><img src = "produtores.jpg"> </span>
 
                 Produtores
 
@@ -705,7 +712,7 @@
             <a href="#"
                class="menu-item">
 
-                <span class="menu-icone">🔔</span>
+                <span class="menu-icone"><img src = "notif.jpg"> </span>
 
                 Notificações
 
@@ -715,7 +722,8 @@
             <a href="login.html"
                class="menu-item">
 
-                <span class="menu-icone">♙</span>
+                <span class="menu-icone"><img src = "perfil.jpg"> </span>
+                
 
                 Minha Conta
 
@@ -725,7 +733,7 @@
             <a href="#"
                class="menu-item">
 
-                <span class="menu-icone">🛒</span>
+                <span class="menu-icone"><img src = "carrinho.jpg"> </span>
 
                 Meu Carrinho
 
@@ -735,7 +743,7 @@
             <a href="#"
                class="menu-item">
 
-                <span class="menu-icone">?</span>
+                <span class="menu-icone"><img src = "ajuda.jpg"></span>
 
                 Ajuda
 
@@ -754,7 +762,12 @@
     <div class="banner">
 
         <h1>
-            🌿 Feira<span>Mov</span>
+                    <img 
+            src="logo_colorido_texto.svg" 
+            alt="Logo"
+            class="logo"
+        >
+
         </h1>
 
         <h2>
@@ -769,7 +782,7 @@
 
         <div class="pesquisa">
 
-            🔍
+            <img src = "pesquisa.jpg">
 
             <input
                 type="text"
@@ -783,6 +796,9 @@
         </div>
 
     </div>
+
+
+
 
 
 
