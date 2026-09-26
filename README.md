@@ -1,629 +1,578 @@
-# FeiraMov
-Marketplace B2B e U2B para a venda e compra de produtos de agronegócios locais.
+<style>
 
-## O que é a FeiraMov?
-- A FeiraMov é um marketplace feito para facilitar o contato entre compradores e vendedores de produtos derivados de agronegócios locais, visando aumentar a visibilidade dos produtores locais e permitir a facilidade na compra desses produtos.
-- O nosso foco não é somente criar um marketplace, mas também permitir a conexão direta entre o vendedor e o consumidor. Por isso, seguimos um modelo que engloba ambas as integrações B2B e U2B, permitindo com que não somente empresas (como restaurantes) comprem produtos, mas também da a total liberdade para o acesso de usuários comuns para fazerem comprar que utilizarão no seu dia a dia.
-- Todo o contato entre os vendedores e compradores é facilitado pelas interfaces do site, garantindo a facilidade para ambos os grupos.
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-## Tecnologias Utilizadas
+    body {
+        font-family: Arial, sans-serif;
+        background: #222;
+        color: #1c1c1c;
+    }
 
+    .container {
+        max-width: 420px;
+        margin: auto;
+        background: #fffaf4;
+        min-height: 100vh;
+        position: relative;
+    }
 
-## Estrutura do Projeto
 
-## Integrantes
+    /* =========================
+       HEADER
+    ========================= */
 
-## Status do Projeto
-**Em desenvolvimento**
-> [!IMPORTANT]
-> Primeira versão estimada para: Dezembro, 2026
+    header {
+        height: 70px;
+        background: #173728;
 
-<!DOCTYPE html>
-<html lang="pt-BR">
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-<head>
-    <meta charset="UTF-8">
+        padding: 0 15px;
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+        color: white;
 
-    <title>FeiraMov</title>
-</head>
+        position: relative;
+        z-index: 1100;
+    }
 
-<body>
+    .menu {
+        border: none;
+        background: none;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+    }
 
-    <div class="container">
+    .logo {
+        font-size: 25px;
+        font-weight: bold;
+    }
 
+    .logo span {
+        color: #82c735;
+    }
 
-        <!-- cabeçalho -->
+    .header-icons {
+        display: flex;
+        gap: 12px;
+        font-size: 20px;
+    }
 
-        <header>
 
-            <button id="botao-menu">
-                ≡
-            </button>
+    /* =========================
+       MENU LATERAL
+    ========================= */
 
-            <div class="logo">
-                 FeiraMov
-            </div>
+    .menu-lateral {
 
-            <div class="header-icons">
+        position: fixed;
 
-                <span> <img
-                src="IMAGENS PI/pesquisa.png"
-                alt="Busca"
-                width="50"
-            ></span>
+        top: 70px;
 
-                <span> <img
-                src="IMAGENS PI/perfil.png"
-                alt="Perfil"
-                width="50"
-            ></span>
+        width: 195px;
 
-                <span> <img
-                src="IMAGENS PI/carrinho.png"
-                alt="Carrinho"
-                width="50"
-            ></span>
+        height: calc(100vh - 70px);
 
-                <span> <img
-                src="IMAGENS PI/notif.png"
-                alt="Notificações"
-                width="50"
-            ></span>
+        background: #1f4332;
 
-            </div>
+        z-index: 1000;
 
-        </header>
+        display: flex;
 
-<!--Menu-->
+        flex-direction: column;
 
-<aside class="menu-lateral"
-       id="menu-lateral">
+        justify-content: space-between;
 
+        padding: 18px 10px;
 
-    <nav class="menu-superior">
+        transform: translateX(-100%);
 
+        transition: 0.3s;
 
-        <a href="#"
-           class="menu-item ativo">
+        box-shadow: 4px 0 12px rgba(0,0,0,.25);
+    }
 
-            <span class="menu-icone"><img src = "casa.png">
-             width="50"
-            </span>
+    .menu-lateral.aberto {
+        transform: translateX(0);
+    }
 
-            Início
+    .menu-superior,
+    .menu-inferior {
+        display: flex;
+        flex-direction: column;
+    }
 
-        </a>
+    .menu-superior {
+        border-bottom: 1px solid rgba(255,255,255,.15);
+        padding-bottom: 12px;
+    }
 
+    .menu-inferior {
+        border-top: 1px solid rgba(255,255,255,.15);
+        padding-top: 12px;
+    }
 
-        <a href="#"
-           class="menu-item">
+    .menu-item {
 
-            <span class="menu-icone"><img src = "pesquisa.png">
-             width="50"
-             </span>
+        display: flex;
 
-            Busca
+        align-items: center;
 
-        </a>
+        gap: 12px;
 
+        padding: 10px 8px;
 
-        <a href="#feiras"
-           class="menu-item">
+        color: #eee;
 
-            <span class="menu-icone"><img src = "sacola.png"> 
-             width="50"
-            </span>
+        text-decoration: none;
 
-            Feiras
+        font-size: 14px;
 
-        </a>
+        border-radius: 7px;
+    }
 
+    .menu-item:hover,
+    .menu-item.ativo {
 
-        <a href="#"
-           class="menu-item">
+        color: #8bc83f;
 
-            <span class="menu-icone"><img src = "loc.png">
-             width="50"
-            </span>
+        background: rgba(255,255,255,.06);
+    }
 
-            Eventos
+    .menu-icone {
+        width: 20px;
+        text-align: center;
+        font-size: 18px;
+    }
 
-        </a>
 
+    /* FUNDO ESCURO */
 
-        <a href="#produtores"
-           class="menu-item">
+    .menu-overlay {
 
-            <span class="menu-icone"><img src = "produtores.png">
-             width="50"
-            </span>
+        position: fixed;
 
-            Produtores
+        top: 70px;
+        left: 0;
 
-        </a>
+        width: 100%;
+        height: calc(100vh - 70px);
 
+        background: rgba(0,0,0,.65);
 
-    </nav>
+        z-index: 900;
 
+        opacity: 0;
 
-    <nav class="menu-inferior">
+        visibility: hidden;
 
+        transition: .3s;
+    }
 
-        <a href="#"
-           class="menu-item">
+    .menu-overlay.ativo {
 
-            <span class="menu-icone"><img src = "notif.png"> 
-             width="50"
-            </span>
+        opacity: 1;
 
-            Notificações
+        visibility: visible;
+    }
 
-        </a>
 
+    /* =========================
+       BANNER
+    ========================= */
 
-        <a href="login.html"
-           class="menu-item">
+    .banner {
 
-            <span class="menu-icone"><img src = "perfil.png">
-             width="50"
-            </span>
-            
+        min-height: 190px;
 
-            Minha Conta
+        padding: 25px 15px;
 
-        </a>
+        color: white;
 
+        background:
+            linear-gradient(
+                rgba(0,40,20,.55),
+                rgba(0,40,20,.55)
+            ),
+            url("imagens/banner.jpg");
 
-        <a href="#"
-           class="menu-item">
+        background-size: cover;
 
-            <span class="menu-icone"><img src = "carrinho.png"> 
-             width="50"
-            </span>
+        background-position: center;
+    }
 
-            Meu Carrinho
+    .banner h1 {
+        font-size: 42px;
+    }
 
-        </a>
+    .banner h1 span {
+        color: #82c735;
+    }
 
+    .banner h2 {
+        font-size: 20px;
+        margin-top: 5px;
+    }
 
-        <a href="#"
-           class="menu-item">
+    .banner p {
+        font-size: 12px;
+        margin-top: 5px;
+        width: 280px;
+    }
 
-            <span>?</span>
 
-            Ajuda
+    /* =========================
+       PESQUISA
+    ========================= */
 
-        </a>
+    .pesquisa {
 
+        display: flex;
 
-    </nav>
+        align-items: center;
 
+        background: white;
 
-</aside>
+        margin-top: 18px;
 
+        border-radius: 30px;
 
+        padding: 5px 7px 5px 15px;
 
-<!-- Logotipo -->
+        color: #333;
+    }
 
-<div class="banner">
+    .pesquisa input {
 
-    <h1>
-                <img 
-        src="logo_colorido_texto.svg" 
-        alt="Logo"
-        class="logo"
-    >
+        flex: 1;
 
-    </h1>
+        border: none;
 
-    <h2>
-        Do campo para a sua mesa.
-    </h2>
+        outline: none;
 
-    <p>
-        Compre direto de produtores locais e tenha produtos
-        frescos, de qualidade e com preço justo.
-    </p>
+        padding: 10px;
 
+        font-size: 12px;
+    }
 
-    <div class="pesquisa">
+    .pesquisa button {
 
-        <img src = "pesquisa.png"
-         width="50"
-        >
-        
-        <input
-            type="text"
-            placeholder="Pesquise por feiras, eventos, produtores..."
-        >
+        border: none;
 
-        <button>
-        ->
-        </button>
+        width: 42px;
+        height: 32px;
 
-    </div>
+        border-radius: 20px;
 
-</div>
+        background: #83c738;
 
-        </section>
+        font-size: 22px;
 
-<!-- Categorias -->
+        cursor: pointer;
+    }
 
-<section>
 
-    <h2>
-        Categorias
-    </h2>
+    /* =========================
+       CATEGORIAS
+    ========================= */
 
-    <div>
+    .categorias {
 
+        display: flex;
 
-        <!-- FRUTAS -->
+        gap: 16px;
 
-        <div>
+        padding: 14px 12px;
 
-            <img
-                src="IMAGENS PI/frutas.png"
-                alt="Frutas"
-                width="50"
-            >
+        overflow-x: auto;
 
-            <p>
-                Frutas
-            </p>
+        background: white;
+    }
 
-        </div>
+    .categoria {
 
+        min-width: 50px;
 
-        <!-- LATICÍNIOS -->
+        text-align: center;
 
-        <div>
+        font-size: 11px;
+    }
 
-            <img
-                src="IMAGENS PI/laticinios.png"
-                alt="Laticínios"
-                width="50"
-            >
+    .categoria .icone {
 
-            <p>
-                Laticínios
-            </p>
+        width: 50px;
+        height: 50px;
 
-        </div>
+        border-radius: 50%;
 
+        background: #173728;
 
-        <!-- GRÃOS -->
+        display: flex;
 
-        <div>
+        justify-content: center;
+        align-items: center;
 
-            <img
-                src="IMAGENS PI/graos.png"
-                alt="Grãos"
-                width="50"
-            >
+        margin-bottom: 6px;
 
-            <p>
-                Grãos
-            </p>
+        font-size: 24px;
+    }
 
-        </div>
 
+    /* =========================
+       CONTEÚDO
+    ========================= */
 
-        <!-- VEGETAIS -->
+    main {
+        padding: 0 12px 25px;
+    }
 
-        <div>
+    section {
+        margin-bottom: 25px;
+    }
 
-            <img
-                src="IMAGENS PI/vegetais.png"
-                alt="Vegetais"
-                width="50"
-            >
+    section h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
 
-            <p>
-                Vegetais
-            </p>
 
-        </div>
+    /* =========================
+       FEIRAS
+    ========================= */
 
-        <img 
-            src="IMAGENS PI/artesanais.png"
-                alt="Artesanais"
-                width="50"
+    .feiras {
 
+        display: flex;
 
-    </div>
+        gap: 12px;
 
-</section>
-        <main>
+        overflow-x: auto;
+    }
 
+    .feira-card {
 
-            <!-- feiras -->
+        min-width: 198px;
 
-            <section id="feiras">
+        background: white;
 
-                <h2>
-                    Feiras em destaque
-                </h2>
+        border-radius: 15px;
 
+        overflow: hidden;
 
-                <article></article>
+        box-shadow: 0 2px 5px rgba(0,0,0,.08);
+    }
 
-                    <h3>
-                        Feira da Praça
-                    </h3>
+    .feira-card img {
 
-                    <p>
-                        Sáb 12 · 08:00
-                    </p>
+        width: 100%;
 
-                    <p>
-                        Centro
-                    </p>
-                     <img
-                        src="IMAGENS PI/feira1.png"
-                        alt="Feira da Praça"
-                        width="300"
+        height: 110px;
 
-                </article>
+        object-fit: cover;
+    }
 
+    .feira-info {
+        padding: 10px;
+    }
 
-                <article>
+    .feira-info h3 {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
 
-                    <img
-                        src="IMAGENS PI/feira"
-                        
-                    >
+    .feira-info p {
+        font-size: 12px;
+        margin: 5px 0;
+    }
 
-                    <h3>
-                        Mercado De Bairro
-                    </h3>
+    .verde {
+        color: #78bd2f;
+    }
 
-                    <p>
-                        Dom 14 · 09:00
-                    </p>
 
-                    <p>
-                        Cidade Jardim
-                    </p>
+    /* =========================
+       PRODUTORES
+    ========================= */
 
-                <img
-                    src="IMAGENS PI/feira2.png"
-                    alt="Mercado do Bairro"
-                    >
-                    <h3>
-                         <article>
+    .produtor-card {
 
-                    <img
-                        src="IMAGENS PI/feira"
-                        
-                    >
+        background: white;
 
-                    <h3>
-                        Mercado De Bairro
-                    </h3>
+        border-radius: 18px;
 
-                    <p>
-                        Dom 14 · 09:00
-                    </p>
+        padding: 12px;
 
-                    <p>
-                        Cariobinha
-                    </p>
+        margin-bottom: 12px;
 
-                <img
-                    src="IMAGENS PI/feira5.jpg"
-                    alt="Mercado do Bairro"
-                    width="320"
-                    >
-                    <h3>
+        display: flex;
 
-                
-              
+        align-items: center;
 
-            <!-- produtores -->
+        gap: 12px;
 
-            <section id="produtores">
+        box-shadow: 0 2px 5px rgba(0,0,0,.05);
+    }
 
-                <h2>
-                    Produtores perto de você
-                </h2>
+    .produtor-card img {
 
+        width: 60px;
 
-                <article>
-                    <h3>
-                        João da Horta
-                    </h3>
+        height: 60px;
 
-                    <img
-                        src="IMAGENS PI/produtorural.png"
-                        alt="João da Horta"
-                        width="300"
-                    >
+        border-radius: 12px;
 
-                    <p>
-                        Frutas e legumes
-                    </p>
+        object-fit: cover;
+    }
 
-                    <p>
-                         4.9 (128)
-                    </p>
+    .produtor-info h3 {
+        font-size: 14px;
+    }
 
-                </article>
+    .produtor-info p {
 
+        font-size: 12px;
 
-                <article>
- <h3>
-                        Maria Artesanal
-                    </h3>
-                    <img
-                        src="IMAGENS PI/mulherqueijo.png"
-                        alt="Maria Artesanal"
-                        width="300"
-                    >
+        color: #777;
 
-                    <p>
-                        Queijos e pães
-                    </p>
+        margin-top: 4px;
+    }
 
-                    <p>
-                         4.8 (94)
-                    </p>
+    .avaliacao {
+        color: #e6a900;
+        font-weight: bold;
+    }
 
-                </article>
 
-            </section>
+    /* =========================
+       PRODUTOS
+    ========================= */
 
+    .produtos-grid {
 
-            <!-- produtos -->
+        display: grid;
 
-            <section>
+        grid-template-columns: 1fr 1fr;
 
-                <h2>
-                    Produtos populares
-                </h2>
+        gap: 12px;
+    }
 
+    .produto-card {
 
-                <article>
-<h3>
-                        Morangos orgânicos
-                    </h3>
-                    <img
-                        src="IMAGENS PI/morango.jpg"
-                        alt="Morangos orgânicos"
-                        width="235"
-                    >
+        background: white;
 
-                
+        border-radius: 15px;
 
-                    <p>
-                        500g
-                    </p>
+        overflow: hidden;
 
-                    <p>
-                        R$ 18,90
-                    </p>
+        box-shadow: 0 2px 6px rgba(0,0,0,.08);
+    }
 
-                    <button>
-                        Adicionar
-                    </button>
+    .produto-card img {
 
-                </article>
+        width: 100%;
 
+        height: 120px;
 
-                <article>
-                    <h3>
-                        Couve e espinafre
-                    </h3>
-                    <img
-                        src="IMAGENS PI/couve.jpg"
-                        alt="Couve e espinafre"
-                        width="250"
-                    >
+        object-fit: cover;
+    }
 
-                    <p>
-                        1 kg
-                    </p>
+    .produto-info {
+        padding: 10px;
+    }
 
-                    <p>
-                        R$ 12,50
-                    </p>
+    .produto-info h3 {
 
-                    <button>
-                        Adicionar
-                    </button>
+        font-size: 13px;
 
-                </article>
+        margin-bottom: 10px;
 
+        min-height: 30px;
+    }
 
-                <article>
-  <h3>
-                        Queijo de cabra artesanal
-                    </h3>
-                    <img
-                        src="IMAGENS PI/queijo.jpg"
-                        alt="Queijo de cabra artesanal"
-                    >
+    .peso {
 
-                
+        color: #777;
 
-                    <p>
-                        200g
-                    </p>
+        font-size: 11px;
 
-                    <p>
-                        R$ 24,00
-                    </p>
+        margin-bottom: 8px;
+    }
 
-                    <button>
-                        Adicionar
-                    </button>
+    .preco {
 
-                </article>
+        font-size: 16px;
 
+        font-weight: bold;
 
-                <article>
-                    <h3>
-                        Pão integral artesanal
-                    </h3>
-                    <img
-                        src="IMAGENS PI/pão.jpg"
-                        alt="Pão integral artesanal"
-                        width="250"
-                    >
+        margin-bottom: 10px;
+    }
 
-                    <p>
-                        1 unidade
-                    </p>
+    .produto-info button {
 
-                    <p>
-                        R$ 8,90
-                    </p>
+        width: 100%;
 
-                    <button>
-                        Adicionar
-                    </button>
+        border: none;
 
-                </article>
+        padding: 9px;
 
-            </section>
+        border-radius: 20px;
 
+        background: #84c63d;
 
-        </main>
+        color: #173728;
 
+        font-weight: bold;
 
-        <!-- RODAPÉ -->
+        cursor: pointer;
+    }
 
-        <footer>
 
-            <a href="#">
-                Suporte e Ajuda
-            </a>
+    /* =========================
+       FOOTER
+    ========================= */
 
-            <a href="#">
-                Política de Privacidade
-            </a>
+    footer {
 
-            <a href="#">
-                Fale Conosco
-            </a>
+        background: #173728;
 
+        color: white;
 
-            <p>
-                © FeiraMov, 2026. Todos os direitos reservados.
-            </p>
+        padding: 30px 15px;
 
-        </footer>
+        text-align: center;
+    }
 
+    .footer-links {
 
-    </div>
+        display: flex;
 
+        justify-content: space-between;
 
+        gap: 10px;
 
+        margin-bottom: 25px;
+    }
 
+    .footer-links a {
 
-</body>
+        color: white;
 
-</html>
+        text-decoration: none;
+
+        font-size: 10px;
+    }
+
+    footer p {
+
+        font-size: 9px;
+
+        color: #83c738;
+    }
+
+</style>
