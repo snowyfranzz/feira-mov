@@ -621,63 +621,7 @@ Marketplace B2B e U2B para a venda e compra de produtos de agronegócios locais.
     </div>
 
 
-    <script>
 
-        const botaoMenu =
-            document.getElementById("botao-menu");
-
-        const menuLateral =
-            document.getElementById("menu-lateral");
-
-        const overlay =
-            document.getElementById("menu-overlay");
-
-
-        botaoMenu.addEventListener(
-            "click",
-            function() {
-
-                if (menuLateral.hidden) {
-
-                    menuLateral.hidden = false;
-
-                    overlay.hidden = false;
-
-                    botaoMenu.textContent = "✕";
-
-                } else {
-
-                    menuLateral.hidden = true;
-
-                    overlay.hidden = true;
-
-                    botaoMenu.textContent = "☰";
-
-                }
-
-            }
-        );
-
-
-        overlay.addEventListener(
-            "click",
-            function() {
-
-                menuLateral.hidden = true;
-
-                overlay.hidden = true;
-
-                botaoMenu.textContent = "☰";
-
-            }
-        );
-
-
-        menuLateral.hidden = true;
-
-        overlay.hidden = true;
-
-    </script>
 
 
 </body>
