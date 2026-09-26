@@ -40,7 +40,7 @@ Marketplace B2B e U2B para a venda e compra de produtos de agronegócios locais.
         <header>
 
             <button id="botao-menu">
-                ☰
+                ≡
             </button>
 
             <div class="logo">
@@ -89,7 +89,9 @@ Marketplace B2B e U2B para a venda e compra de produtos de agronegócios locais.
         <a href="#"
            class="menu-item ativo">
 
-            <span class="menu-icone"><img src = "casa.png"> </span>
+            <span class="menu-icone"><img src = "casa.png">
+             width="50"
+            </span>
 
             Início
 
@@ -99,7 +101,9 @@ Marketplace B2B e U2B para a venda e compra de produtos de agronegócios locais.
         <a href="#"
            class="menu-item">
 
-            <span class="menu-icone"><img src = "pesquisa.png"> </span>
+            <span class="menu-icone"><img src = "pesquisa.png">
+             width="50"
+             </span>
 
             Busca
 
@@ -109,7 +113,9 @@ Marketplace B2B e U2B para a venda e compra de produtos de agronegócios locais.
         <a href="#feiras"
            class="menu-item">
 
-            <span class="menu-icone"><img src = "sacola.png"> </span>
+            <span class="menu-icone"><img src = "sacola.png"> 
+             width="50"
+            </span>
 
             Feiras
 
@@ -119,7 +125,9 @@ Marketplace B2B e U2B para a venda e compra de produtos de agronegócios locais.
         <a href="#"
            class="menu-item">
 
-            <span class="menu-icone"><img src = "loc.png"> </span>
+            <span class="menu-icone"><img src = "loc.png">
+             width="50"
+            </span>
 
             Eventos
 
@@ -129,7 +137,9 @@ Marketplace B2B e U2B para a venda e compra de produtos de agronegócios locais.
         <a href="#produtores"
            class="menu-item">
 
-            <span class="menu-icone"><img src = "produtores.png"> </span>
+            <span class="menu-icone"><img src = "produtores.png">
+             width="50"
+            </span>
 
             Produtores
 
@@ -145,7 +155,9 @@ Marketplace B2B e U2B para a venda e compra de produtos de agronegócios locais.
         <a href="#"
            class="menu-item">
 
-            <span class="menu-icone"><img src = "notif.png"> </span>
+            <span class="menu-icone"><img src = "notif.png"> 
+             width="50"
+            </span>
 
             Notificações
 
@@ -155,7 +167,9 @@ Marketplace B2B e U2B para a venda e compra de produtos de agronegócios locais.
         <a href="login.html"
            class="menu-item">
 
-            <span class="menu-icone"><img src = "perfil.png"> </span>
+            <span class="menu-icone"><img src = "perfil.png">
+             width="50"
+            </span>
             
 
             Minha Conta
@@ -166,7 +180,9 @@ Marketplace B2B e U2B para a venda e compra de produtos de agronegócios locais.
         <a href="#"
            class="menu-item">
 
-            <span class="menu-icone"><img src = "carrinho.png"> </span>
+            <span class="menu-icone"><img src = "carrinho.png"> 
+             width="50"
+            </span>
 
             Meu Carrinho
 
@@ -176,7 +192,7 @@ Marketplace B2B e U2B para a venda e compra de produtos de agronegócios locais.
         <a href="#"
            class="menu-item">
 
-            <span class="menu-icone"><img src = "ajuda.png"></span>
+            <span>?</span>
 
             Ajuda
 
@@ -215,8 +231,10 @@ Marketplace B2B e U2B para a venda e compra de produtos de agronegócios locais.
 
     <div class="pesquisa">
 
-        <img src = "pesquisa.png">
-
+        <img src = "pesquisa.png"
+         width="50"
+        >
+        
         <input
             type="text"
             placeholder="Pesquise por feiras, eventos, produtores..."
