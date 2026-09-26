@@ -49,13 +49,29 @@ Marketplace B2B e U2B para a venda e compra de produtos de agronegócios locais.
 
             <div class="header-icons">
 
-                <span></span>
+                <span> <img
+                src="IMAGENS PI/pesquisa.png"
+                alt="Busca"
+                width="50"
+            ></span>
 
-                <span></span>
+                <span> <img
+                src="IMAGENS PI/perfil.png"
+                alt="Perfil"
+                width="50"
+            ></span>
 
-                <span></span>
+                <span> <img
+                src="IMAGENS PI/carrinho.png"
+                alt="Carrinho"
+                width="50"
+            ></span>
 
-                <span></span>
+                <span> <img
+                src="IMAGENS PI/notif.png"
+                alt="Notificações"
+                width="50"
+            ></span>
 
             </div>
 
@@ -75,7 +91,7 @@ Marketplace B2B e U2B para a venda e compra de produtos de agronegócios locais.
             <nav>
 
                 <a href="#">
-                    ⌂ Início
+                    Início
                 </a>
 
                 <a href="#">
