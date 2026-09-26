@@ -77,102 +77,162 @@ Marketplace B2B e U2B para a venda e compra de produtos de agronegócios locais.
 
         </header>
 
+<!--Menu-->
 
-        <!-- fundo do menu -->
-
-        <div id="menu-overlay"></div>
-
-
-        <!-- menu lateral -->
-
-        <aside id="menu-lateral">
+<aside class="menu-lateral"
+       id="menu-lateral">
 
 
-            <nav>
-
-                <a href="#">
-                    Início
-                </a>
-
-                <a href="#">
-                    ⌕ Busca
-                </a>
-
-                <a href="#feiras">
-                    ▣ Feiras
-                </a>
-
-                <a href="#">
-                    ⌾ Eventos
-                </a>
-
-                <a href="#produtores">
-                    ♟ Produtores
-                </a>
-
-            </nav>
+    <nav class="menu-superior">
 
 
-            <nav>
+        <a href="#"
+           class="menu-item ativo">
 
-                <a href="#">
-                     Notificações
-                </a>
+            <span class="menu-icone"><img src = "home"> </span>
 
-                <a href="login.html">
-                    Minha Conta
-                </a>
+            Início
 
-                <a href="#">
-                     Meu Carrinho
-                </a>
-
-                <a href="#">
-                    ? Ajuda
-                </a>
-
-            </nav>
+        </a>
 
 
-        </aside>
+        <a href="#"
+           class="menu-item">
+
+            <span class="menu-icone"><img src = "pesquisa.png"> </span>
+
+            Busca
+
+        </a>
 
 
-        <!-- baanner -->
+        <a href="#feiras"
+           class="menu-item">
 
-        <section>
+            <span class="menu-icone"><img src = "feiras.png"> </span>
 
-            <h1>
-                 FeiraMov
-            </h1>
+            Feiras
 
-            <h2>
-                Do campo para a sua mesa.
-            </h2>
-
-            <p>
-                Compre direto de produtores locais e tenha
-                produtos frescos, de qualidade e com preço justo.
-            </p>
+        </a>
 
 
-            <div>
+        <a href="#"
+           class="menu-item">
 
-                
+            <span class="menu-icone"><img src = "loc.png"> </span>
 
-                <input
-                    type="text"
-                    placeholder="Pesquise por feiras, eventos, produtores..."
-                >
+            Eventos
 
-                <button>
-                    ➜
-                </button>
+        </a>
 
-            </div>
+
+        <a href="#produtores"
+           class="menu-item">
+
+            <span class="menu-icone"><img src = "produtores.png"> </span>
+
+            Produtores
+
+        </a>
+
+
+    </nav>
+
+
+    <nav class="menu-inferior">
+
+
+        <a href="#"
+           class="menu-item">
+
+            <span class="menu-icone"><img src = "notif.png"> </span>
+
+            Notificações
+
+        </a>
+
+
+        <a href="login.html"
+           class="menu-item">
+
+            <span class="menu-icone"><img src = "perfil.png"> </span>
+            
+
+            Minha Conta
+
+        </a>
+
+
+        <a href="#"
+           class="menu-item">
+
+            <span class="menu-icone"><img src = "carrinho.png"> </span>
+
+            Meu Carrinho
+
+        </a>
+
+
+        <a href="#"
+           class="menu-item">
+
+            <span class="menu-icone"><img src = "ajuda.png"></span>
+
+            Ajuda
+
+        </a>
+
+
+    </nav>
+
+
+</aside>
+
+
+
+<!-- Logotipo -->
+
+<div class="banner">
+
+    <h1>
+                <img 
+        src="logo_colorido_texto.svg" 
+        alt="Logo"
+        class="logo"
+    >
+
+    </h1>
+
+    <h2>
+        Do campo para a sua mesa.
+    </h2>
+
+    <p>
+        Compre direto de produtores locais e tenha produtos
+        frescos, de qualidade e com preço justo.
+    </p>
+
+
+    <div class="pesquisa">
+
+        <img src = "pesquisa.png">
+
+        <input
+            type="text"
+            placeholder="Pesquise por feiras, eventos, produtores..."
+        >
+
+        <button>
+        ->
+        </button>
+
+    </div>
+
+</div>
 
         </section>
 
-<!-- categorias -->
+<!-- Categorias -->
 
 <section>
 
