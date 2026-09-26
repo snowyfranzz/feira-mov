@@ -89,7 +89,7 @@ Marketplace B2B e U2B para a venda e compra de produtos de agronegócios locais.
         <a href="#"
            class="menu-item ativo">
 
-            <span class="menu-icone"><img src = "home"> </span>
+            <span class="menu-icone"><img src = "casa.png"> </span>
 
             Início
 
@@ -109,7 +109,7 @@ Marketplace B2B e U2B para a venda e compra de produtos de agronegócios locais.
         <a href="#feiras"
            class="menu-item">
 
-            <span class="menu-icone"><img src = "feiras.png"> </span>
+            <span class="menu-icone"><img src = "sacola.png"> </span>
 
             Feiras
 
