@@ -46,10 +46,6 @@ img {
     display: block;
 }
 
-svg {
-    width: 1em;
-    height: 1em;
-}
 
 /* ==========================================================
    LOGO (usado no topbar e no banner)
@@ -211,6 +207,11 @@ svg {
     flex-shrink: 0;
     display: flex;
     align-items: center;
+    height: 40px;
+}
+
+.search-bar button img{
+    height: 40px;
 }
 
 /* ==========================================================
@@ -239,7 +240,10 @@ main h2 {
 
 .categorias-grid {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+
     justify-content: space-between;
     gap: 24px 16px;
 }
@@ -257,7 +261,6 @@ main h2 {
     height: 56px;
     border-radius: 28px;
     background-color: var(--verde-escuro);
-    color: var(--verde-claro);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -280,9 +283,10 @@ main h2 {
    ========================================================== */
 
 .feiras-grid,
-.produtos-grid > div {
+.produtos-grid{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    overflow-x: auto;
     gap: 24px;
 }
 
@@ -305,7 +309,7 @@ main h2 {
 .produtos-grid img {
     width: 100%;
     height: 180px;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 .card-info {
@@ -484,11 +488,11 @@ footer p {
     }
 
     .topbar-nav {
-        order: 3;
+        order: 1;
         width: 100%;
         justify-content: flex-start;
         gap: 24px;
-        overflow-x: auto;
+        overflow-x: clip;
     }
 
     .banner h1 {
