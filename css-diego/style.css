@@ -1,0 +1,519 @@
+/* ==========================================================
+   FeiraMov — style.css
+   ========================================================== */
+
+:root {
+    --verde-escuro: #203628;   
+    --verde-claro: #9CD916;    
+    --amarelo-destaque: #F8B215;
+    --texto-claro: #FAF4F9;
+    --texto-escuro: #131D13;
+    --texto-muted: rgba(19, 29, 19, 0.7);
+    --fundo-creme: #FFF9F3;
+    --borda-radius: 16px;
+    --sombra: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --max-largura: 1512px;
+    --gutter: 68px;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--fundo-creme);
+    color: var(--texto-escuro);
+}
+
+.page {
+    max-width: var(--max-largura);
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    background-color: #ffffff;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* ==========================================================
+   LOGO (usado no topbar e no banner)
+   ========================================================== */
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--texto-claro);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.logo .logo-icon {
+    max-width: 100%;
+    max-height: 26px;
+}
+
+.logo span {
+    color: var(--verde-claro);
+}
+
+.logo--banner {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.logo--banner .logo-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* ==========================================================
+   TOPBAR (cabeçalho fixo)
+   ========================================================== */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background-color: var(--verde-escuro);
+    padding: 20px var(--gutter);
+    position: sticky;
+    top: 0;
+    z-index: 30;
+}
+
+.topbar-nav {
+    display: flex;
+    gap: 40px;
+    flex: 1;
+    justify-content: center;
+}
+
+.topbar-nav a {
+    color: var(--texto-claro);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid transparent;
+}
+
+.topbar-nav a.active {
+    border-bottom-color: var(--verde-claro);
+}
+
+.topbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.topbar-icons img{
+    width: 1em;
+    height: 1em;
+}
+
+.topbar-icons a {
+    color: var(--texto-claro);
+    font-size: 22px;
+    line-height: 0;
+}
+
+.topbar-icons .divisor {
+    width: 1px;
+    height: 24px;
+    background-color: rgba(250, 244, 249, 0.3);
+}
+
+/* ==========================================================
+   BANNER
+   ========================================================== */
+
+.banner {
+    position: relative;
+    background:
+        linear-gradient(rgba(32, 54, 40, 0.75), rgba(32, 54, 40, 0.75)),
+        url("IMAGENS PI/991159.jpeg") center / cover no-repeat,
+        linear-gradient(160deg, var(--verde-escuro) 0%, #2f6b3c 100%);
+    color: var(--texto-claro);
+    padding: 56px var(--gutter) 72px;
+}
+
+.banner h1 {
+    font-size: 42px;
+    line-height: 1.15;
+    margin: 0 0 16px;
+    max-width: 780px;
+}
+
+.banner h1 span {
+    color: var(--verde-claro);
+}
+
+.banner > p {
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 620px;
+    margin: 0 0 28px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 999px;
+    padding: 6px 6px 6px 24px;
+    max-width: 700px;
+    box-shadow: var(--sombra);
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: var(--texto-escuro);
+    background: transparent;
+    padding: 10px 8px;
+}
+
+.search-bar input::placeholder {
+    color: var(--texto-muted);
+}
+
+.search-bar button {
+    background-color: var(--verde-claro);
+    color: var(--texto-escuro);
+    border: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-size: 16px;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.search-bar button img{
+    height: 40px;
+}
+
+/* ==========================================================
+   CONTEÚDO PRINCIPAL
+   ========================================================== */
+
+main {
+    padding: 32px var(--gutter) 8px;
+    background-color: var(--fundo-creme);
+}
+
+main > section {
+    margin-bottom: 40px;
+}
+
+main h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--texto-escuro);
+    margin: 0 0 20px;
+}
+
+/* ==========================================================
+   CATEGORIAS
+   ========================================================== */
+
+.categorias-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    justify-content: space-between;
+    gap: 24px 16px;
+}
+
+.categoria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100px;
+}
+
+.categoria-icone {
+    width: 56px;
+    height: 56px;
+    border-radius: 28px;
+    background-color: var(--verde-escuro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.categoria-icone img {
+    width: 56px;
+    height: 56px;
+}
+
+.categoria p {
+    font-size: 11px;
+    color: var(--texto-escuro);
+    margin: 0;
+    text-align: center;
+}
+
+/* ==========================================================
+   CARTÕES (feiras e produtos compartilham a mesma base)
+   ========================================================== */
+
+.feiras-grid,
+.produtos-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    overflow-x: auto;
+    gap: 24px;
+}
+
+.produtos-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.feiras-grid article, 
+.produtos-grid article {
+    background-color: #ffffff;
+    border-radius: var(--borda-radius);
+    overflow: hidden;
+    box-shadow: var(--sombra);
+}
+
+.feiras-grid img,
+.produtos-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: fill;
+}
+
+.card-info {
+    padding: 16px;
+}
+
+.card-info h3 {
+    font-size: 14px;
+    margin: 0 0 8px;
+    color: var(--texto-escuro);
+}
+
+.feiras-grid .card-info p {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--texto-escuro);
+    margin: 0 0 6px;
+}
+
+.feiras-grid .card-info img {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+/* ==========================================================
+   PRODUTORES
+   ========================================================== */
+
+.produtores-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    overflow: scroll;
+    scrollbar-width: none;
+    gap: 24px;
+}
+
+.produtores-grid article {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: #ffffff;
+    border-radius: var(--borda-radius);
+    padding: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.produtores-grid img {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.produtor-info h3 {
+    font-size: 14px;
+    margin: 0 0 4px;
+    color: var(--texto-escuro);
+}
+
+.categoria-produtor {
+    font-size: 12px;
+    color: var(--texto-muted);
+    margin: 0 0 4px;
+}
+
+.avaliacao {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: var(--texto-escuro);
+    margin: 0;
+}
+
+.avaliacao img {
+    width: 14px;
+    height: 14px;
+    color: var(--amarelo-destaque);
+}
+
+.avaliacao span {
+    color: var(--texto-muted);
+}
+
+/* ==========================================================
+   PRODUTOS POPULARES (título, quantidade, preço, botão)
+   ========================================================== */
+
+.produtos-grid .card-info h3 {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.produtos-grid .card-info > p {
+    font-size: 12px;
+    color: var(--texto-muted);
+    margin: 0 0 6px;
+}
+
+.produtos-grid .preco {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--texto-escuro);
+    margin: 0 0 12px;
+}
+
+.produtos-grid button {
+    width: 100%;
+    height: 32px;
+    background-color: var(--verde-claro);
+    color: var(--texto-escuro);
+    border: none;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ==========================================================
+   RODAPÉ
+   ========================================================== */
+
+footer {
+    background-color: var(--verde-escuro);
+    padding: 28px var(--gutter);
+    text-align: center;
+}
+
+footer nav {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 12px;
+}
+
+footer a {
+    color: var(--texto-claro);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    font-size: 10px;
+    color: var(--verde-claro);
+    margin: 0;
+}
+
+/* ==========================================================
+   RESPONSIVO — o frame do Figma é desktop (1512px);
+   estas regras adaptam para telas menores sem quebrar o layout
+   ========================================================== */
+
+@media (max-width: 1100px) {
+    .feiras-grid,
+    .produtores-grid,
+    .produtos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    :root {
+        --gutter: 24px;
+    }
+
+    .topbar {
+        flex-wrap: wrap;
+    }
+
+    .topbar-nav {
+        order: 1;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 24px;
+        overflow-x: clip;
+    }
+
+    .banner h1 {
+        font-size: 32px;
+    }
+
+    .banner > p {
+        font-size: 15px;
+    }
+
+    .categorias-grid {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .feiras-grid,
+    .produtores-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .produtos-grid{
+        flex-direction: column;
+    }
+
+    .produtores-grid article {
+        flex-direction: row;
+    }
+}
