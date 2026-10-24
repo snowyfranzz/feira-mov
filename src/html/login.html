@@ -1,199 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Login - FeiraMov</title>
+    <title>FeiraMov — Iniciar Sessão</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style_principal.css">
+    <link rel="stylesheet" href="../css/style_login.css">
 </head>
-
 <body>
+<div class="page">
 
-    <header>
+       <!-- ======= cabeçalho fixo (Topbar) ======= -->
 
-        <a href="index.html">
-            ☰
-        </a>
-
-        <h2>
-             
-        </h2>
-
-        <nav>
-<div> ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-    <a href="#">
-                <img
-                src="../../assets/imagens-design/pesquisa.png"
-                width="35"
-                Buscar
-            </a>
-</div>
-            
-
-            <a href="login.html">
-                <img
-                src="../../assets/imagens-design/perfil.png"
-                width="35"
-                Minha Conta
-            </a>
-
-            <a href="#">
-                <img
-                src="../../assets/imagens-design/carrinho.png"
-                width="35"
-                Carrinho
-            </a>
-
-            <a href="#">
-                <img
-                src="../../assets/imagens-design/notif.png"
-                width="32"
-                Notificações
-            </a>
-
+    <header class="topbar">
+        <button type="button" class="menu-btn" id="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar-overlay"><img src="../../assets/icones/menu-svgrepo-com.svg"></button>
+        <a href="index.html" class="logo"><img class="logo-icon" src="../../assets/imagens-design/logo_colorido_texto.svg" alt="FeiraMov"></a>
+        <nav class="topbar-nav">
+            <a href="index.html">Início</a>
+            <a href="produtores.html">Produtores</a>
+            <a href="eventos.html">Eventos</a>
+            <a href="#">Ajuda</a>
         </nav>
-
+        <div class="topbar-icons">
+            <a href="#" aria-label="Buscar" data-abrir-busca aria-expanded="false" aria-controls="busca-overlay"><img src="../../assets/icones/search-alt-svgrepo-com.svg"></a>
+            <a href="login.html" aria-label="Minha conta" class="active"><img src="../../assets/icones/profile-svgrepo-com.svg"></a>
+            <span class="divisor"></span>
+            <a href="#" aria-label="Carrinho" data-abrir-carrinho aria-expanded="false" aria-controls="carrinho-overlay"><img src="../../assets/icones/cart-large-minimalistic-svgrepo-com.svg"></a>
+            <a href="#" aria-label="Notificações"><img src="../../assets/icones/bell-svgrepo-com.svg"></a>
+        </div>
     </header>
 
+    <!-- ======= menu lateral (mobile) ======= -->
+    <div class="sidebar-overlay" id="sidebar-overlay">
+        <nav class="sidebar" aria-label="Menu principal">
+            <div class="sidebar-grupo sidebar-grupo--topo">
+                <a href="index.html"><img src="../../assets/icones/house-svgrepo-com.svg"> Início</a>
+                <a href="#" data-abrir-busca><img src="../../assets/icones/search-alt-svgrepo-com.svg"> Busca</a>
+                <a href="#"><img src="../../assets/icones/shopping-bag-01-svgrepo-com1.svg"> Feiras</a>
+                <a href="eventos.html"><img src="../../assets/icones/map-tag-svgrepo-com1.svg"> Eventos</a>
+                <a href="produtores.html"><img src="../../assets/icones/users-svgrepo-com.svg"> Produtores</a>
+            </div>
+            <div class="sidebar-grupo sidebar-grupo--base">
+                <a href="#"><img src="../../assets/icones/bell-svgrepo-com.svg"> Notificações</a>
+                <a href="login.html" class="active"><img src="../../assets/icones/profile-svgrepo-com.svg"> Minha Conta</a>
+                <a href="carrinho.html"><img src="../../assets/icones/cart-large-minimalistic-svgrepo-com.svg"> Meu Carrinho</a>
+                <a href="#"><img src="../../assets/icones/help-svgrepo-com1.svg"> Ajuda</a>
+            </div>
+        </nav>
+    </div>
 
-    <hr>
+    <!-- ======= tela de busca (aparece ao clicar na lupa) ======= -->
+    <div class="busca-overlay" id="busca-overlay" role="dialog" aria-label="Busca">
+        <div class="busca-painel">
+            <img class="busca-logo" src="../../assets/imagens-design/logo_colorido_texto.svg" alt="FeiraMov">
 
-
-    <main>
-
-        <section>
-
-            <!--logo-->
-            
-            <h1>
-                 <img
-                 src="../../assets/imagens-design/logo.png"
-                 width="260"
-            </h1>
-
-            <h2>
-                Iniciar Sessão
-            </h2>
-
-
-            <form action="index.html" method="get">
-
-                <p>
-
-                    <label for="email">
-                        E-Mail ou Username
-                    </label>
-
-                    <br>
-
-                    <input
-                        type="text"
-                        id="email"
-                        name="email"
-                        required
-                    >
-
-                </p>
-
-
-                <p>
-
-                    <label for="senha">
-                        Senha
-                    </label>
-
-                    <br>
-
-                    <input
-                        type="password"
-                        id="senha"
-                        name="senha"
-                        required
-                    >
-
-                </p>
-
-
-                <p>
-
-                    <a href="#">
-                        Esqueci minha senha
-                    </a>
-
-                </p>
-
-
-                <p>
-
-                    <button type="button">
-                        <img
-                        src="../../assets/imagens-design/google2.png"
-                        width="175"
-                        <br><br>
+            <div class="busca-barra">
+                <button type="button" class="busca-filtros" aria-label="Filtros de busca">
+                    <img class="busca-lupa" src="../../assets/icones/filter-svgrepo-com.svg" alt="">
+                </button>
+                <form class="busca-form" role="search" onsubmit="return false">
+                    <img class="busca-lupa" src="../../assets/icones/search-alt-svgrepo-com.svg" alt="">
+                    <input type="search" id="busca-input" placeholder="Pesquise por feiras, eventos, produtores..." aria-label="Pesquisar">
+                    <button type="submit" class="busca-enviar" aria-label="Pesquisar">
+                        <img src="../../assets/icones/arrow-sm-right-svgrepo-com.svg" alt="">
                     </button>
-
-                </p>
-
-
-                <p>
-                    
-                    <button type="submit">
-                        Entrar
-                    </button>
-
-                </p>
-
-            </form>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
-            <p>
+    <!-- ======= pop-up do carrinho (aparece ao clicar no carrinho da topbar) ======= -->
+    <div class="carrinho-overlay" id="carrinho-overlay" role="dialog" aria-label="Meu carrinho">
+        <div class="carrinho-popup">
+            <div class="carrinho-topo">
+                <h2>Meu carrinho</h2>
+                <button type="button" class="carrinho-fechar" data-fechar-carrinho aria-label="Fechar carrinho">&times;</button>
+            </div>
 
-                Não tem uma conta?
+            <ul class="carrinho-itens" id="carrinho-itens"></ul>
+            <p class="carrinho-vazio" id="carrinho-vazio">Seu carrinho está vazio.</p>
 
-                <a href="#">
-                    Criar conta
-                </a>
+            <div class="carrinho-total">
+                <span>Total</span>
+                <strong id="carrinho-total">R$ 0,00</strong>
+            </div>
 
-            </p>
+            <a href="carrinho.html" class="carrinho-ver">Ver meu carrinho</a>
+        </div>
+    </div>
 
-        </section>
-
-    </main>
-
-
-    <hr>
-
+    <section class="auth">
+        <a href="index.html" class="auth-logo"><img src="../../assets/imagens-design/logo_colorido_texto.svg" alt="FeiraMov"></a>
+        <h1>Iniciar Sessão</h1>
+        <form class="auth-card" action="perfil-usuario.html">
+            <div class="campo">
+                <label for="login">E-mail ou username</label>
+                <input id="login" type="text" autocomplete="username" required>
+            </div>
+            <div class="campo">
+                <label for="senha">Senha</label>
+                <input id="senha" type="password" autocomplete="current-password" required>
+                <a href="#" class="esqueci">Esqueci minha senha</a>
+            </div>
+            <button type="button" class="btn-google">
+                <img src="../../assets/icones/google-color-svgrepo-com.svg">
+                Entrar com o Google
+            </button>
+            <button type="submit" class="btn-primario">Entrar</button>
+        </form>
+        <p class="auth-troca">Não tem uma conta? <a href="cadastro.html">Criar conta</a></p>
+    </section>
 
     <footer>
-
         <nav>
-
-            <a href="#">
-                Suporte e Ajuda
-            </a>
-
-            |
-
-            <a href="#">
-                Política de Privacidade
-            </a>
-
-            |
-
-            <a href="#">
-                Fale Conosco
-            </a>
-
+            <a href="#">Suporte e Ajuda</a>
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Fale Conosco</a>
         </nav>
-
-
-        <p>
-            © FeiraMov, 2026. Todos os direitos reservados.
-        </p>
-
+        <p>© FeiraMov, 2026. Todos os direitos reservados.</p>
     </footer>
+</div>
 
+
+<script src="../js/menu.js"></script>
+<script src="../js/carrinho.js"></script>
 </body>
-
 </html>

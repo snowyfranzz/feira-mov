@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeiraMov — Criar Conta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style_principal.css">
+    <link rel="stylesheet" href="../css/style_login.css">
+</head>
+<body>
+<div class="page">
+    <header class="topbar">
+        <button type="button" class="menu-btn" id="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar-overlay"><img src="../../assets/icones/menu-svgrepo-com.svg"></button>
+        <a href="index.html" class="logo"><img class="logo-icon" src="../../assets/imagens-design/logo_colorido_texto.svg" alt="FeiraMov"></a>
+        <nav class="topbar-nav">
+            <a href="index.html">Início</a>
+            <a href="produtores.html">Produtores</a>
+            <a href="eventos.html">Eventos</a>
+            <a href="#">Ajuda</a>
+        </nav>
+        <div class="topbar-icons">
+            <a href="#" aria-label="Buscar" data-abrir-busca aria-expanded="false" aria-controls="busca-overlay"><img src="../../assets/icones/search-alt-svgrepo-com.svg"></a>
+            <a href="login.html" aria-label="Minha conta" class="active"><img src="../../assets/icones/profile-svgrepo-com.svg"></a>
+            <span class="divisor"></span>
+            <a href="#" aria-label="Carrinho" data-abrir-carrinho aria-expanded="false" aria-controls="carrinho-overlay"><img src="../../assets/icones/cart-large-minimalistic-svgrepo-com.svg"></a>
+            <a href="#" aria-label="Notificações"><img src="../../assets/icones/bell-svgrepo-com.svg"></a>
+        </div>
+    </header>
+
+    <!-- ======= menu lateral (mobile) ======= -->
+    <div class="sidebar-overlay" id="sidebar-overlay">
+        <nav class="sidebar" aria-label="Menu principal">
+            <div class="sidebar-grupo sidebar-grupo--topo">
+                <a href="index.html"><img src="../../assets/icones/house-svgrepo-com.svg"> Início</a>
+                <a href="#" data-abrir-busca><img src="../../assets/icones/search-alt-svgrepo-com.svg"> Busca</a>
+                <a href="#"><img src="../../assets/icones/shopping-bag-01-svgrepo-com1.svg"> Feiras</a>
+                <a href="eventos.html"><img src="../../assets/icones/map-tag-svgrepo-com1.svg"> Eventos</a>
+                <a href="produtores.html"><img src="../../assets/icones/users-svgrepo-com.svg"> Produtores</a>
+            </div>
+            <div class="sidebar-grupo sidebar-grupo--base">
+                <a href="#"><img src="../../assets/icones/bell-svgrepo-com.svg"> Notificações</a>
+                <a href="login.html" class="active"><img src="../../assets/icones/profile-svgrepo-com.svg"> Minha Conta</a>
+                <a href="carrinho.html"><img src="../../assets/icones/cart-large-minimalistic-svgrepo-com.svg"> Meu Carrinho</a>
+                <a href="#"><img src="../../assets/icones/help-svgrepo-com1.svg"> Ajuda</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- ======= tela de busca (aparece ao clicar na lupa) ======= -->
+    <div class="busca-overlay" id="busca-overlay" role="dialog" aria-label="Busca">
+        <div class="busca-painel">
+            <img class="busca-logo" src="../../assets/imagens-design/logo_colorido_texto.svg" alt="FeiraMov">
+
+            <div class="busca-barra">
+                <button type="button" class="busca-filtros" aria-label="Filtros de busca">
+                    <img class="busca-lupa" src="../../assets/icones/filter-svgrepo-com.svg" alt="">
+                </button>
+                <form class="busca-form" role="search" onsubmit="return false">
+                    <img class="busca-lupa" src="../../assets/icones/search-alt-svgrepo-com.svg" alt="">
+                    <input type="search" id="busca-input" placeholder="Pesquise por feiras, eventos, produtores..." aria-label="Pesquisar">
+                    <button type="submit" class="busca-enviar" aria-label="Pesquisar">
+                        <img src="../../assets/icones/arrow-sm-right-svgrepo-com.svg" alt="">
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ======= pop-up do carrinho (aparece ao clicar no carrinho da topbar) ======= -->
+    <div class="carrinho-overlay" id="carrinho-overlay" role="dialog" aria-label="Meu carrinho">
+        <div class="carrinho-popup">
+            <div class="carrinho-topo">
+                <h2>Meu carrinho</h2>
+                <button type="button" class="carrinho-fechar" data-fechar-carrinho aria-label="Fechar carrinho">&times;</button>
+            </div>
+
+            <ul class="carrinho-itens" id="carrinho-itens"></ul>
+            <p class="carrinho-vazio" id="carrinho-vazio">Seu carrinho está vazio.</p>
+
+            <div class="carrinho-total">
+                <span>Total</span>
+                <strong id="carrinho-total">R$ 0,00</strong>
+            </div>
+
+            <a href="carrinho.html" class="carrinho-ver">Ver meu carrinho</a>
+        </div>
+    </div>
+
+    <section class="auth">
+        <a href="index.html" class="auth-logo"><img src="../../assets/imagens-design/logo_colorido_texto.svg" alt="FeiraMov"></a>
+        <h1>Criar Conta</h1>
+        <div class="auth-card">
+            <p class="auth-passo" id="passo">Passo 1 de 2</p>
+
+            <form id="etapa1" onsubmit="return false">
+                <div class="campo"><label for="username">Username</label><input id="username" type="text" required></div>
+                <div class="campo"><label for="email">E-mail</label><input id="email" type="email" required></div>
+                <div class="campo"><label for="senha">Senha</label><input id="senha" type="password" minlength="8" required></div>
+                <button type="button" id="continuar" class="btn btn-primario">Continuar</button>
+            </form>
+
+            <form id="etapa2" action="login.html" hidden>
+                <div class="campo"><label for="nome">Nome completo</label><input id="nome" type="text" required></div>
+                <div class="campo"><label for="cpf">CPF</label><input id="cpf" type="text" inputmode="numeric" placeholder="000.000.000-00" required></div>
+                <div class="campo"><label for="endereco">Endereço</label><input id="endereco" type="text" required></div>
+                <div class="campo"><label for="complemento">Complemento</label><input id="complemento" type="text"></div>
+                <label class="switch" for="produtor">
+                    <input type="checkbox" id="produtor"><span class="switch-trilho"></span>
+                    Conta de produtor?
+                </label>
+                <div class="campo" id="campo-tenda"><label for="tenda">Nome da tenda</label><input id="tenda" type="text" disabled></div>
+                <button type="submit" class="btn btn-primario">Continuar</button>
+            </form>
+        </div>
+        <p class="auth-troca">Já tem uma conta? <a href="login.html">Iniciar Sessão</a></p>
+    </section>
+
+    <footer>
+        <nav>
+            <a href="#">Suporte e Ajuda</a>
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Fale Conosco</a>
+        </nav>
+        <p>© FeiraMov, 2026. Todos os direitos reservados.</p>
+    </footer>
+</div>
+<script src="../js/menu.js"></script>
+<script src="../js/carrinho.js"></script>
+<script>
+    var etapa1 = document.getElementById('etapa1');
+    var etapa2 = document.getElementById('etapa2');
+    var passo = document.getElementById('passo');
+    var produtor = document.getElementById('produtor');
+    var tenda = document.getElementById('tenda');
+
+    document.getElementById('continuar').addEventListener('click', function () {
+        if (!etapa1.reportValidity()) return;
+        etapa1.hidden = true;
+        etapa2.hidden = false;
+        passo.textContent = 'Passo 2 de 2';
+    });
+
+    produtor.addEventListener('change', function () {
+        tenda.disabled = !produtor.checked;
+        tenda.required = produtor.checked;
+        if (!produtor.checked) tenda.value = '';
+    });
+</script>
+
+</body>
+</html>
