@@ -94,7 +94,8 @@
     <section class="auth">
         <a href="index.html" class="auth-logo"><img src="../../assets/imagens-design/logo_colorido_texto.svg" alt="FeiraMov"></a>
         <h1>Iniciar Sessão</h1>
-        <form class="auth-card" action="perfil-usuario.html">
+        <form class="auth-card" id="form-login">
+            <p class="sucesso" id="msg-sucesso" hidden>Conta criada com sucesso! Entre com seus dados.</p>
             <div class="campo">
                 <label for="login">E-mail ou username</label>
                 <input id="login" type="text" autocomplete="username" required>
@@ -104,6 +105,7 @@
                 <input id="senha" type="password" autocomplete="current-password" required>
                 <a href="#" class="esqueci">Esqueci minha senha</a>
             </div>
+            <p class="erro" id="erro-login" role="alert" hidden></p>
             <button type="button" class="btn-google">
                 <img src="../../assets/icones/google-color-svgrepo-com.svg">
                 Entrar com o Google
@@ -126,5 +128,6 @@
 
 <script src="../js/menu.js"></script>
 <script src="../js/carrinho.js"></script>
+<script src="../js/login.js"></script>
 </body>
 </html>

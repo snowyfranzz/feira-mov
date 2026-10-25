@@ -98,10 +98,11 @@
                 <div class="campo"><label for="username">Username</label><input id="username" type="text" required></div>
                 <div class="campo"><label for="email">E-mail</label><input id="email" type="email" required></div>
                 <div class="campo"><label for="senha">Senha</label><input id="senha" type="password" minlength="8" required></div>
+                <p class="erro" id="erro-etapa1" role="alert" hidden></p>
                 <button type="button" id="continuar" class="btn btn-primario">Continuar</button>
             </form>
 
-            <form id="etapa2" action="login.html" hidden>
+            <form id="etapa2" hidden>
                 <div class="campo"><label for="nome">Nome completo</label><input id="nome" type="text" required></div>
                 <div class="campo"><label for="cpf">CPF</label><input id="cpf" type="text" inputmode="numeric" placeholder="000.000.000-00" required></div>
                 <div class="campo"><label for="endereco">Endereço</label><input id="endereco" type="text" required></div>
@@ -128,26 +129,7 @@
 </div>
 <script src="../js/menu.js"></script>
 <script src="../js/carrinho.js"></script>
-<script>
-    var etapa1 = document.getElementById('etapa1');
-    var etapa2 = document.getElementById('etapa2');
-    var passo = document.getElementById('passo');
-    var produtor = document.getElementById('produtor');
-    var tenda = document.getElementById('tenda');
-
-    document.getElementById('continuar').addEventListener('click', function () {
-        if (!etapa1.reportValidity()) return;
-        etapa1.hidden = true;
-        etapa2.hidden = false;
-        passo.textContent = 'Passo 2 de 2';
-    });
-
-    produtor.addEventListener('change', function () {
-        tenda.disabled = !produtor.checked;
-        tenda.required = produtor.checked;
-        if (!produtor.checked) tenda.value = '';
-    });
-</script>
+<script src="../js/cadastro.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,361 @@
+/* ==========================================================
+   FeiraMov — login e cadastro
+   Desktop: frame de 1900px | Mobile: frame de 402px até 768px
+   ========================================================== */
+
+/* ---------- fundo (área entre topbar e footer) ---------- */
+.auth {
+    display: grid;
+    justify-items: center;
+    align-content: start;
+    min-height: 751px;
+    padding: 33px 16px 43px;
+    box-sizing: border-box;
+    background:
+        linear-gradient(rgba(19, 29, 19, .525), rgba(19, 29, 19, .525)),
+        url("IMAGENS PI/horta-legumes-restos-comida-plantar.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ---------- logo e título ---------- */
+.auth-logo {
+    display: block;
+    width: 474px;
+    max-width: 100%;
+    aspect-ratio: 474 / 94;
+}
+
+.auth-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.auth h1 {
+    margin: 34px 0 21px;
+    color: var(--verde-claro);
+    font-size: 36px;
+    line-height: 43px;
+    font-weight: 700;
+}
+
+/* ---------- card ---------- */
+.auth-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 31px;
+    width: 529px;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 27px 27px 30px 26px;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+}
+
+/* formulários do cadastro (etapas) dentro do card */
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 31px;
+    width: 100%;
+}
+
+.auth-card .auth-passo {
+    margin: 0;
+    color: var(--verde-claro);
+    font-size: 24px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.auth-card label {
+    margin-bottom: 5.5px;
+    padding-left: 14px;
+    color: #131D13;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 500;
+}
+
+.auth-card input {
+    width: 100%;
+    height: 49px;
+    box-sizing: border-box;
+    padding: 0 14px;
+    background: #FAFAFA;
+    border: 1px solid var(--verde-claro);
+    border-radius: 12px;
+    color: #131D13;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.auth-card input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(141, 191, 70, .35);
+}
+
+.auth-card input:disabled {
+    background: #EDEDED;
+    border-color: #D4D4D4;
+    cursor: not-allowed;
+}
+
+.auth-card .campo:has(input:disabled) label {
+    color: rgba(19, 29, 19, .4);
+}
+
+.auth-card .esqueci {
+    margin-top: 4px;
+    padding-left: 14px;
+    color: var(--verde-claro);
+    font-size: 11px;
+    line-height: 12px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* ---------- cadastro, etapa 2: endereço e complemento lado a lado ---------- */
+#etapa2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 24px;
+    justify-items: stretch;
+}
+
+#etapa2 > .campo:nth-child(-n+2),
+#etapa2 > .switch,
+#etapa2 > #campo-tenda,
+#etapa2 > .btn {
+    grid-column: 1 / -1;
+}
+
+#etapa2 > .btn {
+    justify-self: center;
+    margin-top: 6px;
+}
+
+/* ---------- interruptor "Conta de produtor?" ---------- */
+.auth-card label.switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding-left: 13px;
+    font-size: 14px;
+    line-height: 17px;
+    cursor: pointer;
+}
+
+.auth-card .switch input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    opacity: 0;
+}
+
+.switch-trilho {
+    position: relative;
+    flex: none;
+    width: 50px;
+    height: 26px;
+    border-radius: 13px;
+    background-color: #D9D9D9;
+    transition: background-color .2s;
+}
+
+.switch-trilho::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
+    transition: transform .2s;
+}
+
+.switch input:checked + .switch-trilho {
+    background-color: var(--verde-claro);
+}
+
+.switch input:checked + .switch-trilho::after {
+    transform: translateX(24px);
+}
+
+.switch input:focus-visible + .switch-trilho {
+    box-shadow: 0 0 0 3px rgba(141, 191, 70, .35);
+}
+
+/* ---------- botões ---------- */
+.auth-card .btn-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    width: 424px;
+    max-width: 100%;
+    height: 59px;
+    margin-top: 7px;
+    background-color: #131D13;
+    border: 1px solid #131D13;
+    border-radius: 12px;
+    color: #FAF4F9;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.auth-card .btn-google img {
+    width: 36px;
+    height: 36px;
+}
+
+.auth-card .btn-primario {
+    width: 343.5px;
+    max-width: 100%;
+    height: 63.5px;
+    margin-top: 7px;
+    background-color: var(--verde-claro);
+    border: none;
+    border-radius: 12px;
+    color: #FAF4F9;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* ---------- "Não tem uma conta?" ---------- */
+.auth-troca {
+    margin: 12.5px 0 0;
+    color: #FAF4F9;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 500;
+}
+
+.auth-troca a {
+    color: var(--verde-destaque);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/* ==========================================================
+   MOBILE — frame de 402px até 768px
+   ========================================================== */
+
+@media (max-width: 768px) {
+    .auth {
+        min-height: 654px;
+        padding: 58px 16px 26px;
+    }
+
+    .auth-logo {
+        width: 267px;
+    }
+
+    .auth h1 {
+        margin: 38px 0 16px;
+        font-size: 24px;
+        line-height: 29px;
+    }
+
+    .auth-card {
+        width: 308px;
+        gap: 31px;
+        padding: 25px 15px 22px;
+    }
+
+    .auth-card form {
+        gap: 24px;
+    }
+
+    #etapa2 {
+        grid-template-columns: 1fr;
+        row-gap: 8px;
+    }
+
+    #etapa2 > .btn {
+        margin-top: 24px;
+    }
+
+    #etapa2 > .switch {
+        margin: 6px 0;
+    }
+
+    .auth-card .auth-passo {
+        font-size: 14px;
+    }
+
+    .auth-card label {
+        margin-bottom: 4px;
+        padding-left: 8px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .auth-card input {
+        height: 40px;
+        padding: 0 12px;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+
+    .auth-card .esqueci {
+        margin-top: 3px;
+        padding-left: 8px;
+        font-size: 10px;
+        line-height: 10px;
+    }
+
+    .auth-card label.switch {
+        padding-left: 0;
+    }
+
+    .auth-card .btn-google {
+        gap: 8px;
+        width: 100%;
+        height: 42px;
+        margin-top: 0;
+        border-radius: 10px;
+        font-size: 12px;
+    }
+
+    .auth-card .btn-google img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .auth-card .btn-primario {
+        width: 200px;
+        height: 52px;
+        margin-top: 0;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+
+    .auth-troca,
+    .auth-troca a {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .auth-troca {
+        margin-top: 8px;
+    }
+}
