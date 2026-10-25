@@ -10,8 +10,12 @@ Marketplace B2B e U2B para a venda e compra de produtos de agronegócios locais.
 - Figma - Design
 - HTML5
 - CSS
+- JavaScript
 
 ## Estrutura do Projeto
+
+- O repositório é organizado separando o código do site (src/) dos arquivos de mídia (assets/). Assim, cada tipo de arquivo tem um lugar fixo e fica fácil encontrar o que precisa ser alterado.
+- Utilizamos HTML para fazer a fundação das páginas do site, CSS para estilizar e JavaScript para adicionar interatividade e reatividade.
 
 ## Integrantes
 
