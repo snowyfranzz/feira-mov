@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+        <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeiraMov</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_principal.css">
+    <link rel="stylesheet" href="style_index.css">
+    <link rel="stylesheet" href="style_eventos.css">
+</head>
+<body>
+
+    <div class="page">
+
+        <!-- ======= cabeçalho fixo (Topbar) ======= -->
+
+        <header class="topbar">
+
+            <button type="button" class="menu-btn" id="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar-overlay"><img src="IMAGENS PI/menu-svgrepo-com.svg"></button>
+            <a href="index.html" class="logo">
+                <img class="logo-icon" src="IMAGENS PI/logo_colorido_texto.svg">
+            </a>
+
+            <nav class="topbar-nav">
+                <a href="index.html">Início</a>
+                <a href="perfil-produtor1.html">Produtores</a>
+                <a href="eventos.html" class="active">Eventos</a>
+                <a href="#">Ajuda</a>
+            </nav>
+
+            <div class="topbar-icons">
+                <a href="#" aria-label="Buscar" data-abrir-busca aria-expanded="false" aria-controls="busca-overlay"><img src="IMAGENS PI/search-alt-svgrepo-com.svg"></a>
+                <a href="login.html" aria-label="Minha conta"><img src="IMAGENS PI/profile-svgrepo-com.svg"></a>
+                <span class="divisor"></span>
+                <a href="carrinho.html" aria-label="Carrinho"><img src="IMAGENS PI/cart-large-minimalistic-svgrepo-com.svg"></a>
+                <a href="#" aria-label="Notificações"><img src="IMAGENS PI/bell-svgrepo-com.svg"></a>
+            </div>
+
+        </header>
+
+    <!-- ======= menu lateral (mobile) ======= -->
+    <div class="sidebar-overlay" id="sidebar-overlay">
+        <nav class="sidebar" aria-label="Menu principal">
+            <div class="sidebar-grupo sidebar-grupo--topo">
+                <a href="index.html" class="ativo"><img src="IMAGENS PI/house-svgrepo-com.svg"> Início</a>
+                <a href="#" data-abrir-busca><img src="IMAGENS PI/search-alt-svgrepo-com.svg"> Busca</a>
+                <a href="#"><img src="IMAGENS PI/shopping-bag-01-svgrepo-com1.svg"> Feiras</a>
+                <a href="#"><img src="IMAGENS PI/map-tag-svgrepo-com1.svg"> Eventos</a>
+                <a href="perfil-produtor1.html"><img src="IMAGENS PI/users-svgrepo-com.svg"> Produtores</a>
+            </div>
+            <div class="sidebar-grupo sidebar-grupo--base">
+                <a href="#"><img src="IMAGENS PI/bell-svgrepo-com.svg"> Notificações</a>
+                <a href="login.html"><img src="IMAGENS PI/profile-svgrepo-com.svg"> Minha Conta</a>
+                <a href="carrinho.html"><img src="IMAGENS PI/cart-large-minimalistic-svgrepo-com.svg"> Meu Carrinho</a>
+                <a href="#"><img src="IMAGENS PI/help-svgrepo-com1.svg"> Ajuda</a>
+            </div>
+        </nav>
+    </div>
+    
+            <section id="eventos" class="eventos">
+
+                <h2>Festa do Pão</h2>
+                 <img src="IMAGENS PI/evento1.jpg" alt="evento1">
+
+                <div class="produtores-grid">
+
+                    
+
+                 <article>
+                        <img src="IMAGENS PI/mulherqueijo.png" alt="evento1">
+                        <div class="evento-info">
+                            <h3>Maria Artesanal</h3>
+                            <p class="categoria-evento">Pães e bolos</p>
+                            <p class = "produtores">Produtos:</p>
+                            <ol>
+                                <li>Bolo de morango sem glúten</li>
+                                <li>Leite fresco</li>
+                                <li>Bolo de chocolate sem glúten</li>
+                                <li>Pão baguete</li>
+                                <li>Pão francês</li>
+                                <li>Pão integral</li>
+                                <li>Pão sem glúten</li>
+                            </ol>
+                            <p class="avaliacao"><img src="IMAGENS PI/star-svgrepo-com.svg"> 4.9 <span>(128)</span></p>
+                        </div>
+                    </article>
+                    </a>
+
+                <div class="produtores-grid">
+                    
+                    <article>
+                        <img src="IMAGENS PI/bakery.jpg" alt="evento1">
+                        <div class="evento-info">
+                            <h3>Casa do Pão</h3>
+                            <p class="categoria-evento">Pães e bolos</p>
+                            <p class = "produtores">Produtos:</p>
+                            <ol>
+                                <li>Pão na chapa</li>
+                                <li>Leite fresco</li>
+                                <li>Bolo de chocolate</li>
+                                <li>Pão baguete</li>
+                                <li>Pão francês</li>
+                                <li>Pão integral</li>
+                                <li>Pão italiano branco</li>
+                                <li>Pão de queijo</li>
+                                <li>Pão de queijo com goiabada</li>
+                                <li>Pão de queijo com requeijão</li>
+                                <li>Goiabada</li>
+                                <li>Misto quente</li>
+                            </ol>
+                            <p class="avaliacao"><img src="IMAGENS PI/star-svgrepo-com.svg"> 4.9 <span>(128)</span></p>
+                        </div>
+                    </article>
+                    </a>
+
+                  <article>
+                        <img src="IMAGENS PI/bolovo.jpg" alt="evento1">
+                        <div class="evento-info">
+                            <h3>Bolos da Vovó</h3>
+                            <p class="categoria-evento">Pães e bolos</p>
+                            <p class = "produtores">Produtos:</p>
+                            <ol>
+                                <li>Bolo de morango</li>
+                                <li>Leite fresco</li>
+                                <li>Bolo de chocolate</li>
+                                <li>Cupcake</li>
+                                <li>Bolo de maracujá</li>
+                                <li>Bolo vulcão</li>
+                                <li>Bolinho de chuva</li>
+                            </ol>
+                            <p class="avaliacao"><img src="IMAGENS PI/star-svgrepo-com.svg"> 5.0 <span>(128)</span></p>
+                        </div>
+                    </article>
+                    </a>
+
+                 
+
+                </div>
+</html>
