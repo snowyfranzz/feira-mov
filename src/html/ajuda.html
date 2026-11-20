@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeiraMov — Ajuda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style_principal.css">
+    <link rel="stylesheet" href="../css/style_ajuda.css">
+</head>
+<body>
+
+    <div class="page page--rodape-no-fim">
+
+        <!-- ======= cabeçalho fixo (Topbar) ======= -->
+
+        <header class="topbar">
+
+            <button type="button" class="menu-btn" id="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar-overlay"><img src="../../assets/icones/menu-svgrepo-com.svg"></button>
+            <a href="index.html" class="logo">
+                <img class="logo-icon" src="../../assets/imagens-design/logo_colorido_texto.svg">
+            </a>
+
+            <nav class="topbar-nav">
+                <a href="index.html">Início</a>
+                <a href="produtores.html">Produtores</a>
+                <a href="eventos.html">Eventos</a>
+                <a href="ajuda.html" class="active">Ajuda</a>
+            </nav>
+
+            <div class="topbar-icons">
+                <a href="#" aria-label="Buscar" data-abrir-busca aria-expanded="false" aria-controls="busca-overlay"><img src="../../assets/icones/search-alt-svgrepo-com.svg"></a>
+                <a href="login.html" aria-label="Minha conta"><img src="../../assets/icones/profile-svgrepo-com.svg"></a>
+                <span class="divisor"></span>
+                <a href="#" aria-label="Carrinho" data-abrir-carrinho aria-expanded="false" aria-controls="carrinho-overlay"><img src="../../assets/icones/cart-large-minimalistic-svgrepo-com.svg"></a>
+                <a href="#" aria-label="Notificações"><img src="../../assets/icones/bell-svgrepo-com.svg"></a>
+            </div>
+
+        </header>
+
+    <!-- ======= menu lateral (mobile) ======= -->
+    <div class="sidebar-overlay" id="sidebar-overlay">
+        <nav class="sidebar" aria-label="Menu principal">
+            <div class="sidebar-grupo sidebar-grupo--topo">
+                <a href="index.html"><img src="../../assets/icones/house-svgrepo-com.svg"> Início</a>
+                <a href="#" data-abrir-busca><img src="../../assets/icones/search-alt-svgrepo-com.svg"> Busca</a>
+                <a href="#"><img src="../../assets/icones/shopping-bag-01-svgrepo-com1.svg"> Feiras</a>
+                <a href="eventos.html"><img src="../../assets/icones/map-tag-svgrepo-com1.svg"> Eventos</a>
+                <a href="produtores.html"><img src="../../assets/icones/users-svgrepo-com.svg"> Produtores</a>
+            </div>
+            <div class="sidebar-grupo sidebar-grupo--base">
+                <a href="#"><img src="../../assets/icones/bell-svgrepo-com.svg"> Notificações</a>
+                <a href="login.html"><img src="../../assets/icones/profile-svgrepo-com.svg"> Minha Conta</a>
+                <a href="carrinho.html"><img src="../../assets/icones/cart-large-minimalistic-svgrepo-com.svg"> Meu Carrinho</a>
+                <a href="ajuda.html" class="active"><img src="../../assets/icones/help-svgrepo-com1.svg"> Ajuda</a>
+            </div>
+        </nav>
+    </div>
+
+
+    <!-- ======= tela de busca (aparece ao clicar na lupa) ======= -->
+    <div class="busca-overlay" id="busca-overlay" role="dialog" aria-label="Busca">
+        <div class="busca-painel">
+            <img class="busca-logo" src="../../assets/imagens-design/logo_colorido_texto.svg" alt="FeiraMov">
+
+            <div class="busca-barra">
+                <button type="button" class="busca-filtros" aria-label="Filtros de busca">
+                    <img class="busca-lupa" src="../../assets/icones/filter-svgrepo-com.svg" alt="">
+                </button>
+                <form class="busca-form" role="search" onsubmit="return false">
+                    <img class="busca-lupa" src="../../assets/icones/search-alt-svgrepo-com.svg" alt="">
+                    <input type="search" id="busca-input" placeholder="Pesquise por feiras, eventos, produtores..." aria-label="Pesquisar">
+                    <button type="submit" class="busca-enviar" aria-label="Pesquisar">
+                        <img src="../../assets/icones/arrow-sm-right-svgrepo-com.svg" alt="">
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ======= pop-up do carrinho (aparece ao clicar no carrinho da topbar) ======= -->
+    <div class="carrinho-overlay" id="carrinho-overlay" role="dialog" aria-label="Meu carrinho">
+        <div class="carrinho-popup">
+            <div class="carrinho-topo">
+                <h2>Meu carrinho</h2>
+                <button type="button" class="carrinho-fechar" data-fechar-carrinho aria-label="Fechar carrinho">&times;</button>
+            </div>
+
+            <ul class="carrinho-itens" id="carrinho-itens"></ul>
+            <p class="carrinho-vazio" id="carrinho-vazio">Seu carrinho está vazio.</p>
+
+            <div class="carrinho-total">
+                <span>Total</span>
+                <strong id="carrinho-total">R$ 0,00</strong>
+            </div>
+
+            <a href="carrinho.html" class="carrinho-ver">Ver meu carrinho</a>
+        </div>
+    </div>
+
+        <main class="ajuda">
+
+            <!-- ======= título e índice ======= -->
+            <section class="ajuda-topo">
+                <h1>Como podemos ajudar?</h1>
+                <p>Encontre respostas rápidas sobre a sua conta, compras e barracas na FeiraMov.</p>
+                <nav class="ajuda-indice" aria-label="Assuntos da ajuda">
+                    <a href="#conta">Conta e login</a>
+                    <a href="#compras">Compras e carrinho</a>
+                    <a href="#produtores">Para produtores</a>
+                    <a href="#privacidade">Privacidade</a>
+                    <a href="#contato">Fale conosco</a>
+                </nav>
+            </section>
+
+            <!-- ======= perguntas frequentes ======= -->
+            <section class="ajuda-grupo" id="conta">
+                <h2>Conta e login</h2>
+                <details>
+                    <summary>Como crio uma conta?</summary>
+                    <p>Clique no ícone de perfil no topo da página e depois em <a href="cadastro.html">Criar conta</a>. No primeiro passo, escolha um username, informe seu e-mail e uma senha de pelo menos 8 caracteres. No segundo, preencha nome, CPF e endereço. Ao terminar, você já entra logado na sua conta.</p>
+                </details>
+                <details>
+                    <summary>Posso entrar com o e-mail ou com o username?</summary>
+                    <p>Pode usar qualquer um dos dois na tela de <a href="login.html">Iniciar Sessão</a>. Letras maiúsculas e minúsculas não fazem diferença.</p>
+                </details>
+                <details>
+                    <summary>Esqueci minha senha. E agora?</summary>
+                    <p>A recuperação de senha ainda está em desenvolvimento. Enquanto isso, entre em contato com a gente pelos canais da seção <a href="#contato">Fale conosco</a>.</p>
+                </details>
+                <details>
+                    <summary>Como altero meu endereço de entrega?</summary>
+                    <p>Entre na sua conta, vá em <strong>Minha conta</strong> e clique em <strong>Editar Endereço</strong>. Altere o endereço e o complemento e clique em <strong>Salvar</strong>.</p>
+                </details>
+                <details>
+                    <summary>Como saio da minha conta?</summary>
+                    <p>Na página <strong>Minha conta</strong>, clique em <strong>Sair da conta</strong>, ao lado de "Informações da conta".</p>
+                </details>
+            </section>
+
+            <section class="ajuda-grupo" id="compras">
+                <h2>Compras e carrinho</h2>
+                <details>
+                    <summary>Como adiciono produtos ao carrinho?</summary>
+                    <p>Na página de um produtor ou na página inicial, clique em <strong>Adicionar</strong> no produto que quiser. Para ver os itens e o total, clique no ícone do carrinho no topo da página.</p>
+                </details>
+                <details>
+                    <summary>Posso comprar como empresa ou restaurante?</summary>
+                    <p>Sim! A FeiraMov atende tanto pessoas que compram para o dia a dia quanto empresas, como restaurantes, que querem comprar direto do produtor local.</p>
+                </details>
+                <details>
+                    <summary>Como acompanho meus pedidos?</summary>
+                    <p>O histórico de compras fica na página <strong>Minha conta</strong>, com o status de cada pedido (entregue ou não entregue).</p>
+                </details>
+            </section>
+
+            <section class="ajuda-grupo" id="produtores">
+                <h2>Para produtores</h2>
+                <details>
+                    <summary>Como vendo meus produtos na FeiraMov?</summary>
+                    <p>No segundo passo do <a href="cadastro.html">cadastro</a>, ative a opção <strong>Conta de produtor?</strong> e preencha o nome da sua tenda, telefone, CNPJ e uma descrição. O slogan é opcional. Depois de criar a conta, você vai direto para a página da sua barraca.</p>
+                </details>
+                <details>
+                    <summary>Como troco a foto da minha barraca?</summary>
+                    <p>Na página da sua barraca, clique na foto ou no botão <strong>Alterar foto</strong> e escolha uma imagem do seu computador ou celular. A foto é recortada em formato quadrado automaticamente.</p>
+                </details>
+                <details>
+                    <summary>Já tenho conta comum. Posso virar produtor?</summary>
+                    <p>Por enquanto, a conta de produtor é escolhida no cadastro. Se você já tem uma conta comum, crie uma nova conta de produtor usando outro e-mail.</p>
+                </details>
+            </section>
+
+            <section class="ajuda-grupo" id="privacidade">
+                <h2>Privacidade</h2>
+                <details>
+                    <summary>Onde ficam guardados os meus dados?</summary>
+                    <p>A FeiraMov ainda está em fase de protótipo. Os dados da sua conta ficam salvos só no navegador que você usou para se cadastrar. Se você limpar os dados do navegador ou trocar de aparelho, a conta não estará lá.</p>
+                </details>
+            </section>
+
+            <!-- ======= contato ======= -->
+            <section class="ajuda-contato" id="contato">
+                <h2>Ainda precisa de ajuda?</h2>
+                <p>Fale com a equipe da FeiraMov. Respondemos de segunda a sexta, das 9h às 18h.</p>
+                <div class="ajuda-canais">
+                    <a class="ajuda-canal" href="mailto:contato@feiramov.com.br">
+                        <strong>E-mail</strong>
+                        <span>contato@feiramov.com.br</span>
+                    </a>
+                    <a class="ajuda-canal" href="tel:+551912345678">
+                        <strong>Linha de suporte</strong>
+                        <span>(19) 1234-5678</span>
+                    </a>
+                </div>
+                <p class="ajuda-mais">Prefere redes sociais ou mandar uma mensagem? Veja todos os canais em <a href="fale-conosco.html">Fale Conosco</a>.</p>
+            </section>
+
+        </main>
+
+
+        <!-- ======= rodapé ======= -->
+
+        <footer>
+            <nav>
+                <a href="ajuda.html">Suporte e Ajuda</a>
+                <a href="politica-privacidade.html">Política de Privacidade</a>
+                <a href="fale-conosco.html">Fale Conosco</a>
+            </nav>
+            <p>© FeiraMov, 2026. Todos os direitos reservados.</p>
+        </footer>
+
+    </div>
+
+<script src="../js/auth.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/carrinho.js"></script>
+</body>
+</html>

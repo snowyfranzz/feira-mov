@@ -231,6 +231,74 @@ main h2 {
     color: var(--amarelo-destaque);
 }
 
+/* ---------- formulário de edição (endereço) ---------- */
+.form-endereco {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-endereco label {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 700;
+    color: var(--texto-escuro);
+}
+
+.form-endereco input {
+    height: 36px;
+    margin-bottom: 6px;
+    padding: 0 10px;
+    border: 1px solid var(--verde-claro);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.form-endereco input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(141, 191, 70, .35);
+}
+
+.form-acoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.info-card .erro-form,
+.erro-form {
+    margin: 0;
+    font-size: 12px;
+    line-height: 16px;
+    color: #B3261E;
+}
+
+/* ---------- foto do produtor (clique para trocar) ---------- */
+.perfil-banner .avatar--editavel {
+    cursor: pointer;
+}
+
+.perfil-banner .btn-foto {
+    align-self: flex-start;
+    margin-top: 4px;
+}
+
+.perfil-banner .erro-form {
+    color: #FF8A80;
+}
+
+/* aviso de lista vazia (ex.: barraca sem produtos) */
+.lista-vazia {
+    margin: 0;
+    padding: 16px;
+    background-color: #ffffff;
+    border-radius: var(--borda-radius);
+    font-size: 13px;
+    line-height: 20px;
+    color: var(--cinza-arroba);
+}
+
 /* ==========================================================
    LISTA DE PRODUTOS / COMPRAS
    ========================================================== */

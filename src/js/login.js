@@ -1,3 +1,5 @@
+// Login — FeiraMov
+
 const form = document.getElementById('form-login');
 const campoLogin = document.getElementById('login');
 const campoSenha = document.getElementById('senha');
@@ -5,6 +7,12 @@ const erro = document.getElementById('erro-login');
 const msgSucesso = document.getElementById('msg-sucesso');
 const btnGoogle = document.querySelector('.btn-google');
 const linkEsqueci = document.querySelector('.esqueci');
+
+// Quem já está logado não precisa ver o login de novo.
+const jaLogado = Auth.usuarioLogado();
+if (jaLogado) {
+    window.location.replace(Auth.paginaDaConta(jaLogado));
+}
 
 function mostrarErro(mensagem) {
     erro.textContent = mensagem;
@@ -16,14 +24,6 @@ function limparErro() {
     erro.hidden = true;
 }
 
-function lerUsuarios() {
-    try {
-        return JSON.parse(localStorage.getItem('usuarios')) || [];
-    } catch {
-        return [];
-    }
-}
-
 function emailValido(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
@@ -32,7 +32,7 @@ if (new URLSearchParams(window.location.search).get('cadastro') === 'ok') {
     msgSucesso.hidden = false;
 }
 
-form.addEventListener('submit', (evento) => {
+form.addEventListener('submit', evento => {
     evento.preventDefault();
     limparErro();
 
@@ -49,33 +49,35 @@ form.addEventListener('submit', (evento) => {
         return;
     }
 
-    const usuario = lerUsuarios().find(u =>
-        (u.email === login || u.username.toLowerCase() === login) && u.senha === senha
-    );
+    const usuarios = Auth.lerUsuarios();
+    const usuario = login.includes('@')
+        ? Auth.buscarPorEmail(usuarios, login)
+        : Auth.buscarPorUsername(usuarios, login);
 
-    if (!usuario) {
+    if (!usuario || usuario.senha !== senha) {
         mostrarErro('E-mail/username ou senha incorretos.');
         return;
     }
 
-    localStorage.setItem('usuarioLogado', JSON.stringify({
-        nome: usuario.nome,
-        email: usuario.email,
-        username: usuario.username
-    }));
+    Auth.entrar(usuario);
 
-    window.location.href = 'perfil-usuario.html';
+    // Produtores vão para a própria barraca; demais usuários seguem para o perfil comum.
+    window.location.href = Auth.paginaDaConta(usuario);
 });
 
 [campoLogin, campoSenha].forEach(campo =>
     campo.addEventListener('input', limparErro)
 );
 
-btnGoogle.addEventListener('click', () => {
-    alert('Agradecemos ao login!');
-});
+if (btnGoogle) {
+    btnGoogle.addEventListener('click', () => {
+        alert('Login com o Google em breve!');
+    });
+}
 
-linkEsqueci.addEventListener('click', (evento) => {
-    evento.preventDefault();
-    alert('Recuperação de senha em breve!');
-});
+if (linkEsqueci) {
+    linkEsqueci.addEventListener('click', evento => {
+        evento.preventDefault();
+        alert('Recuperação de senha em breve!');
+    });
+}

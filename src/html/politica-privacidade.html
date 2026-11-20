@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeiraMov — Política de Privacidade</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style_principal.css">
+    <link rel="stylesheet" href="../css/style_ajuda.css">
+</head>
+<body>
+
+    <div class="page page--rodape-no-fim">
+
+        <!-- ======= cabeçalho fixo (Topbar) ======= -->
+
+        <header class="topbar">
+
+            <button type="button" class="menu-btn" id="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar-overlay"><img src="../../assets/icones/menu-svgrepo-com.svg"></button>
+            <a href="index.html" class="logo">
+                <img class="logo-icon" src="../../assets/imagens-design/logo_colorido_texto.svg">
+            </a>
+
+            <nav class="topbar-nav">
+                <a href="index.html">Início</a>
+                <a href="produtores.html">Produtores</a>
+                <a href="eventos.html">Eventos</a>
+                <a href="ajuda.html">Ajuda</a>
+            </nav>
+
+            <div class="topbar-icons">
+                <a href="#" aria-label="Buscar" data-abrir-busca aria-expanded="false" aria-controls="busca-overlay"><img src="../../assets/icones/search-alt-svgrepo-com.svg"></a>
+                <a href="login.html" aria-label="Minha conta"><img src="../../assets/icones/profile-svgrepo-com.svg"></a>
+                <span class="divisor"></span>
+                <a href="#" aria-label="Carrinho" data-abrir-carrinho aria-expanded="false" aria-controls="carrinho-overlay"><img src="../../assets/icones/cart-large-minimalistic-svgrepo-com.svg"></a>
+                <a href="#" aria-label="Notificações"><img src="../../assets/icones/bell-svgrepo-com.svg"></a>
+            </div>
+
+        </header>
+
+    <!-- ======= menu lateral (mobile) ======= -->
+    <div class="sidebar-overlay" id="sidebar-overlay">
+        <nav class="sidebar" aria-label="Menu principal">
+            <div class="sidebar-grupo sidebar-grupo--topo">
+                <a href="index.html"><img src="../../assets/icones/house-svgrepo-com.svg"> Início</a>
+                <a href="#" data-abrir-busca><img src="../../assets/icones/search-alt-svgrepo-com.svg"> Busca</a>
+                <a href="#"><img src="../../assets/icones/shopping-bag-01-svgrepo-com1.svg"> Feiras</a>
+                <a href="eventos.html"><img src="../../assets/icones/map-tag-svgrepo-com1.svg"> Eventos</a>
+                <a href="produtores.html"><img src="../../assets/icones/users-svgrepo-com.svg"> Produtores</a>
+            </div>
+            <div class="sidebar-grupo sidebar-grupo--base">
+                <a href="#"><img src="../../assets/icones/bell-svgrepo-com.svg"> Notificações</a>
+                <a href="login.html"><img src="../../assets/icones/profile-svgrepo-com.svg"> Minha Conta</a>
+                <a href="carrinho.html"><img src="../../assets/icones/cart-large-minimalistic-svgrepo-com.svg"> Meu Carrinho</a>
+                <a href="ajuda.html"><img src="../../assets/icones/help-svgrepo-com1.svg"> Ajuda</a>
+            </div>
+        </nav>
+    </div>
+
+
+    <!-- ======= tela de busca (aparece ao clicar na lupa) ======= -->
+    <div class="busca-overlay" id="busca-overlay" role="dialog" aria-label="Busca">
+        <div class="busca-painel">
+            <img class="busca-logo" src="../../assets/imagens-design/logo_colorido_texto.svg" alt="FeiraMov">
+
+            <div class="busca-barra">
+                <button type="button" class="busca-filtros" aria-label="Filtros de busca">
+                    <img class="busca-lupa" src="../../assets/icones/filter-svgrepo-com.svg" alt="">
+                </button>
+                <form class="busca-form" role="search" onsubmit="return false">
+                    <img class="busca-lupa" src="../../assets/icones/search-alt-svgrepo-com.svg" alt="">
+                    <input type="search" id="busca-input" placeholder="Pesquise por feiras, eventos, produtores..." aria-label="Pesquisar">
+                    <button type="submit" class="busca-enviar" aria-label="Pesquisar">
+                        <img src="../../assets/icones/arrow-sm-right-svgrepo-com.svg" alt="">
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ======= pop-up do carrinho (aparece ao clicar no carrinho da topbar) ======= -->
+    <div class="carrinho-overlay" id="carrinho-overlay" role="dialog" aria-label="Meu carrinho">
+        <div class="carrinho-popup">
+            <div class="carrinho-topo">
+                <h2>Meu carrinho</h2>
+                <button type="button" class="carrinho-fechar" data-fechar-carrinho aria-label="Fechar carrinho">&times;</button>
+            </div>
+
+            <ul class="carrinho-itens" id="carrinho-itens"></ul>
+            <p class="carrinho-vazio" id="carrinho-vazio">Seu carrinho está vazio.</p>
+
+            <div class="carrinho-total">
+                <span>Total</span>
+                <strong id="carrinho-total">R$ 0,00</strong>
+            </div>
+
+            <a href="carrinho.html" class="carrinho-ver">Ver meu carrinho</a>
+        </div>
+    </div>
+
+        <main class="ajuda documento">
+
+            <section class="ajuda-topo">
+                <h1>Política de Privacidade</h1>
+                <p>Última atualização: 20 de novembro de 2026.</p>
+                <nav class="ajuda-indice" aria-label="Seções da política">
+                    <a href="#coleta">Dados coletados</a>
+                    <a href="#uso">Como usamos</a>
+                    <a href="#armazenamento">Onde ficam</a>
+                    <a href="#compartilhamento">Compartilhamento</a>
+                    <a href="#direitos">Seus direitos</a>
+                    <a href="#contato-privacidade">Contato</a>
+                </nav>
+            </section>
+
+            <section class="documento-aviso">
+                <p><strong>A FeiraMov é um projeto acadêmico em fase de protótipo.</strong> Nenhum dado é enviado para servidores: tudo o que você cadastra fica guardado apenas no navegador que você está usando.</p>
+            </section>
+
+            <section class="documento-secao">
+                <h2>1. Quem somos</h2>
+                <p>A FeiraMov é um marketplace que conecta compradores (pessoas e empresas, como restaurantes) a produtores de agronegócios locais. Esta política explica quais dados pessoais tratamos, para quê e quais são os seus direitos, de acordo com a Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018).</p>
+            </section>
+
+            <section class="documento-secao" id="coleta">
+                <h2>2. Dados que coletamos</h2>
+                <p>Coletamos apenas os dados que você informa ao usar o site:</p>
+                <ul>
+                    <li><strong>Dados de acesso:</strong> username, e-mail e senha.</li>
+                    <li><strong>Dados pessoais:</strong> nome completo, CPF, endereço e complemento.</li>
+                    <li><strong>Dados de produtor</strong> (só para contas de produtor): nome da tenda, slogan, telefone, CNPJ, descrição da barraca e foto de perfil.</li>
+                    <li><strong>Dados de uso:</strong> itens adicionados ao carrinho e histórico de compras.</li>
+                    <li><strong>Mensagens:</strong> o que você envia pelo formulário do <a href="fale-conosco.html">Fale Conosco</a>.</li>
+                </ul>
+                <p>Não coletamos dados de localização, não usamos cookies de rastreamento e não exibimos anúncios.</p>
+            </section>
+
+            <section class="documento-secao" id="uso">
+                <h2>3. Como usamos seus dados</h2>
+                <ul>
+                    <li>Criar e manter a sua conta e permitir que você entre nela.</li>
+                    <li>Identificar contas repetidas (mesmo e-mail ou username).</li>
+                    <li>Mostrar as suas informações na página da sua conta ou da sua barraca.</li>
+                    <li>Calcular o carrinho e registrar o histórico de compras.</li>
+                    <li>Responder às mensagens enviadas pelo Fale Conosco.</li>
+                </ul>
+                <p>O CPF e o CNPJ servem apenas para identificar compradores e produtores, e são verificados somente quanto ao formato.</p>
+            </section>
+
+            <section class="documento-secao" id="armazenamento">
+                <h2>4. Onde os dados ficam guardados</h2>
+                <p>Nesta versão, os dados ficam no <strong>armazenamento local (localStorage) do seu navegador</strong>. Isso significa que:</p>
+                <ul>
+                    <li>eles não saem do seu aparelho e a equipe da FeiraMov não tem acesso a eles;</li>
+                    <li>outra pessoa que use o mesmo navegador pode acessar as contas salvas nele, por isso evite usar o site em computadores compartilhados;</li>
+                    <li>limpar os dados do navegador apaga as contas, o carrinho e as mensagens.</li>
+                </ul>
+                <p>Como se trata de um protótipo, a senha é guardada sem criptografia. <strong>Não use uma senha que você usa em outros sites.</strong></p>
+            </section>
+
+            <section class="documento-secao" id="compartilhamento">
+                <h2>5. Compartilhamento</h2>
+                <p>A FeiraMov não vende, aluga nem compartilha seus dados com terceiros. As informações da sua conta só aparecem para quem estiver logado nela.</p>
+            </section>
+
+            <section class="documento-secao" id="direitos">
+                <h2>6. Seus direitos</h2>
+                <p>Pela LGPD, você pode a qualquer momento:</p>
+                <ul>
+                    <li><strong>Consultar</strong> seus dados na página <a href="perfil-usuario.html">Minha conta</a>.</li>
+                    <li><strong>Corrigir</strong> informações, como o endereço de entrega.</li>
+                    <li><strong>Excluir</strong> seus dados apagando os dados do site nas configurações do seu navegador.</li>
+                    <li><strong>Tirar dúvidas</strong> sobre o tratamento dos seus dados pelos nossos canais de atendimento.</li>
+                </ul>
+            </section>
+
+            <section class="documento-secao">
+                <h2>7. Mudanças nesta política</h2>
+                <p>Esta política pode ser atualizada conforme o projeto evoluir, por exemplo quando os dados passarem a ser guardados em um servidor. A data da última atualização fica sempre no topo desta página.</p>
+            </section>
+
+            <section class="ajuda-contato" id="contato-privacidade">
+                <h2>Dúvidas sobre privacidade?</h2>
+                <p>Fale com a equipe da FeiraMov pelo e-mail <a href="mailto:contato@feiramov.com.br">contato@feiramov.com.br</a> ou veja todos os canais na página <a href="fale-conosco.html">Fale Conosco</a>.</p>
+            </section>
+
+        </main>
+
+
+        <!-- ======= rodapé ======= -->
+
+        <footer>
+            <nav>
+                <a href="ajuda.html">Suporte e Ajuda</a>
+                <a href="politica-privacidade.html">Política de Privacidade</a>
+                <a href="fale-conosco.html">Fale Conosco</a>
+            </nav>
+            <p>© FeiraMov, 2026. Todos os direitos reservados.</p>
+        </footer>
+
+    </div>
+
+<script src="../js/auth.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/carrinho.js"></script>
+</body>
+</html>

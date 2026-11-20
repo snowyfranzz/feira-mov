@@ -17,7 +17,7 @@
             <a href="index.html">Início</a>
             <a href="produtores.html">Produtores</a>
             <a href="eventos.html">Eventos</a>
-            <a href="#">Ajuda</a>
+            <a href="ajuda.html">Ajuda</a>
         </nav>
         <div class="topbar-icons">
             <a href="#" aria-label="Buscar" data-abrir-busca aria-expanded="false" aria-controls="busca-overlay"><img src="../../assets/icones/search-alt-svgrepo-com.svg"></a>
@@ -42,7 +42,7 @@
                 <a href="#"><img src="../../assets/icones/bell-svgrepo-com.svg"> Notificações</a>
                 <a href="login.html" class="active"><img src="../../assets/icones/profile-svgrepo-com.svg"> Minha Conta</a>
                 <a href="carrinho.html"><img src="../../assets/icones/cart-large-minimalistic-svgrepo-com.svg"> Meu Carrinho</a>
-                <a href="#"><img src="../../assets/icones/help-svgrepo-com1.svg"> Ajuda</a>
+                <a href="ajuda.html"><img src="../../assets/icones/help-svgrepo-com1.svg"> Ajuda</a>
             </div>
         </nav>
     </div>
@@ -73,7 +73,7 @@
         <div>
             <h1 id="perfil-nome"></h1>
             <p class="arroba" id="perfil-arroba"></p>
-            <p class="arroba">23 compras</p>
+            <p class="arroba" id="perfil-compras">0 compras</p>
         </div>
     </section>
 
@@ -99,42 +99,48 @@
 
     <main>
         <section>
-            <div class="secao-topo"><h2>Informações da conta</h2></div>
+            <div class="secao-topo"><h2>Informações da conta</h2><button type="button" class="btn-pequeno" id="btn-sair">Sair da conta</button></div>
             <div class="info-card">
                 <p>Nome de usuário: <span id="info-username"></span></p>
                 <p>E-mail: <span id="info-email"></span></p>
                 <p>Senha: <span id="info-senha"></span> <button type="button" class="btn-pequeno" id="btn-senha">Mostrar</button></p>
             </div>
-            <div class="secao-topo"><h2>Endereço de Entrega</h2><button class="btn-pequeno">Editar Endereço</button></div>
+            <div class="secao-topo"><h2>Endereço de Entrega</h2><button type="button" class="btn-pequeno" id="btn-endereco">Editar Endereço</button></div>
             <div class="info-card">
-                <p><img src="../../assets/icones/map-pin-svgrepo-com.svg" alt=""> <span id="info-endereco"></span></p>
+                <p id="linha-endereco"><img src="../../assets/icones/map-pin-svgrepo-com.svg" alt=""> <span id="info-endereco"></span></p>
+                <form class="form-endereco" id="form-endereco" hidden>
+                    <label for="novo-endereco">Endereço</label>
+                    <input id="novo-endereco" type="text" required>
+                    <label for="novo-complemento">Complemento</label>
+                    <input id="novo-complemento" type="text">
+                    <p class="erro-form" id="erro-endereco" role="alert" hidden></p>
+                    <div class="form-acoes">
+                        <button type="button" class="btn-pequeno" id="cancelar-endereco">Cancelar</button>
+                        <button type="submit" class="btn-pequeno btn-pequeno--cheio">Salvar</button>
+                    </div>
+                </form>
             </div>
         </section>
 
         <section>
             <h2>Histórico de compras</h2>
-            <div class="lista-produtos">
-                <article><img src="../../assets/imagens-produtos/morango.jpg" alt="">
-                    <div class="card-info"><div class="linha"><div><h3>Morangos orgânicos</h3><p>250g - Barraca do João</p></div></div>
-                    <div class="linha"><strong>R$ 9,45</strong><span class="selo selo--destaque">Entregue</span></div></div></article>
-                <article><img src="../../assets/imagens-produtos/pão.jpg" alt="">
-                    <div class="card-info"><div class="linha"><div><h3>Pão integral artesanal</h3><p>3 unidades</p></div></div>
-                    <div class="linha"><strong>R$ 26,70</strong><span class="selo selo--alerta">Não Entregue</span></div></div></article>
-            </div>
+            <div class="lista-produtos" id="lista-compras" hidden></div>
+            <p class="lista-vazia" id="compras-vazio">Você ainda não fez nenhuma compra.</p>
         </section>
     </main>
 
     <footer>
         <nav>
-            <a href="#">Suporte e Ajuda</a>
-            <a href="#">Política de Privacidade</a>
-            <a href="#">Fale Conosco</a>
+            <a href="ajuda.html">Suporte e Ajuda</a>
+            <a href="politica-privacidade.html">Política de Privacidade</a>
+            <a href="fale-conosco.html">Fale Conosco</a>
         </nav>
         <p>© FeiraMov, 2026. Todos os direitos reservados.</p>
     </footer>
 </div>
 
 
+<script src="../js/auth.js"></script>
 <script src="../js/menu.js"></script>
 <script src="../js/carrinho.js"></script>
 <script src="../js/perfil_usuario.js"></script>

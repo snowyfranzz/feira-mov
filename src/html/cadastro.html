@@ -17,7 +17,7 @@
             <a href="index.html">Início</a>
             <a href="produtores.html">Produtores</a>
             <a href="eventos.html">Eventos</a>
-            <a href="#">Ajuda</a>
+            <a href="ajuda.html">Ajuda</a>
         </nav>
         <div class="topbar-icons">
             <a href="#" aria-label="Buscar" data-abrir-busca aria-expanded="false" aria-controls="busca-overlay"><img src="../../assets/icones/search-alt-svgrepo-com.svg"></a>
@@ -42,7 +42,7 @@
                 <a href="#"><img src="../../assets/icones/bell-svgrepo-com.svg"> Notificações</a>
                 <a href="login.html" class="active"><img src="../../assets/icones/profile-svgrepo-com.svg"> Minha Conta</a>
                 <a href="carrinho.html"><img src="../../assets/icones/cart-large-minimalistic-svgrepo-com.svg"> Meu Carrinho</a>
-                <a href="#"><img src="../../assets/icones/help-svgrepo-com1.svg"> Ajuda</a>
+                <a href="ajuda.html"><img src="../../assets/icones/help-svgrepo-com1.svg"> Ajuda</a>
             </div>
         </nav>
     </div>
@@ -104,7 +104,7 @@
 
             <form id="etapa2" hidden>
                 <div class="campo"><label for="nome">Nome completo</label><input id="nome" type="text" required></div>
-                <div class="campo"><label for="cpf">CPF</label><input id="cpf" type="text" inputmode="numeric" placeholder="000.000.000-00" required></div>
+                <div class="campo"><label for="cpf">CPF</label><input id="cpf" type="text" inputmode="numeric" maxlength="14" autocomplete="off" placeholder="000.000.000-00" required></div>
                 <div class="campo"><label for="endereco">Endereço</label><input id="endereco" type="text" required></div>
                 <div class="campo"><label for="complemento">Complemento</label><input id="complemento" type="text"></div>
                 <label class="switch" for="produtor">
@@ -112,7 +112,18 @@
                     Conta de produtor?
                 </label>
                 <div class="campo" id="campo-tenda"><label for="tenda">Nome da tenda</label><input id="tenda" type="text" disabled></div>
-                <button type="submit" class="btn btn-primario">Continuar</button>
+                <div class="campo" id="campo-slogan"><label for="slogan">Slogan (opcional)</label><input id="slogan" type="text" maxlength="80" disabled></div>
+                <div class="campo"><label for="telefone">Telefone</label><input id="telefone" type="tel" inputmode="numeric" placeholder="(11) 90000-0000" disabled></div>
+                <div class="campo"><label for="cnpj">CNPJ</label><input id="cnpj" type="text" inputmode="numeric" placeholder="00.000.000/0000-00" disabled></div>
+                <div class="campo" id="campo-descricao">
+                    <label for="descricao">Descrição da barraca</label>
+                    <textarea id="descricao" rows="4" maxlength="500" placeholder="Conte o que você vende e onde encontra seus clientes." disabled></textarea>
+                </div>
+                <p class="erro" id="erro-etapa2" role="alert" hidden></p>
+                <div class="auth-acoes">
+                    <button type="button" id="voltar" class="btn btn-secundario">Voltar</button>
+                    <button type="submit" class="btn btn-primario">Criar conta</button>
+                </div>
             </form>
         </div>
         <p class="auth-troca">Já tem uma conta? <a href="login.html">Iniciar Sessão</a></p>
@@ -120,13 +131,14 @@
 
     <footer>
         <nav>
-            <a href="#">Suporte e Ajuda</a>
-            <a href="#">Política de Privacidade</a>
-            <a href="#">Fale Conosco</a>
+            <a href="ajuda.html">Suporte e Ajuda</a>
+            <a href="politica-privacidade.html">Política de Privacidade</a>
+            <a href="fale-conosco.html">Fale Conosco</a>
         </nav>
         <p>© FeiraMov, 2026. Todos os direitos reservados.</p>
     </footer>
 </div>
+<script src="../js/auth.js"></script>
 <script src="../js/menu.js"></script>
 <script src="../js/carrinho.js"></script>
 <script src="../js/cadastro.js"></script>

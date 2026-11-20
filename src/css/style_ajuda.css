@@ -1,0 +1,454 @@
+/* ==========================================================
+   FeiraMov — página de ajuda (perguntas frequentes e contato)
+   Desktop: frame de 1900px | Mobile: frame de 402px até 768px
+   ========================================================== */
+
+.ajuda {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px var(--gutter) 64px;
+    color: var(--texto-escuro);
+}
+
+.ajuda h2 {
+    margin: 0 0 16px;
+    font-size: 22px;
+    line-height: 27px;
+    font-weight: 700;
+    color: var(--verde-escuro);
+}
+
+.ajuda a {
+    color: var(--verde-escuro);
+    font-weight: 700;
+}
+
+/* ---------- título e índice ---------- */
+.ajuda-topo h1 {
+    margin: 0 0 8px;
+    font-size: 36px;
+    line-height: 43px;
+    font-weight: 700;
+    color: var(--verde-claro);
+}
+
+.ajuda-topo p {
+    margin: 0 0 24px;
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--texto-muted);
+}
+
+.ajuda-indice {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.ajuda .ajuda-indice a {
+    padding: 8px 14px;
+    border: 1px solid var(--verde-claro);
+    border-radius: 999px;
+    background-color: #ffffff;
+    font-size: 13px;
+    line-height: 16px;
+    text-decoration: none;
+}
+
+.ajuda .ajuda-indice a:hover {
+    background-color: var(--verde-claro);
+    color: #ffffff;
+}
+
+/* ao clicar no índice, o título não fica escondido atrás da topbar fixa */
+.ajuda section {
+    scroll-margin-top: calc(var(--altura-topbar) + 16px);
+}
+
+/* ---------- perguntas (acordeão com <details>) ---------- */
+.ajuda-grupo details {
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border-radius: var(--borda-radius);
+    box-shadow: var(--sombra);
+}
+
+.ajuda-grupo summary {
+    position: relative;
+    padding: 16px 48px 16px 20px;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+}
+
+.ajuda-grupo summary::-webkit-details-marker {
+    display: none;
+}
+
+/* sinal de + que vira − quando a pergunta está aberta */
+.ajuda-grupo summary::after {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--verde-claro);
+}
+
+.ajuda-grupo details[open] summary::after {
+    content: "−";
+}
+
+.ajuda-grupo summary:focus-visible {
+    outline: none;
+    border-radius: var(--borda-radius);
+    box-shadow: 0 0 0 3px rgba(141, 191, 70, .35);
+}
+
+.ajuda-grupo details p {
+    margin: 0;
+    padding: 0 20px 18px;
+    font-size: 14px;
+    line-height: 21px;
+    color: var(--texto-muted);
+}
+
+/* ---------- contato ---------- */
+.ajuda-contato {
+    padding: 28px;
+    border-radius: var(--borda-radius);
+    background-color: var(--verde-escuro);
+    color: var(--texto-claro);
+}
+
+.ajuda .ajuda-contato h2 {
+    margin-bottom: 8px;
+    color: var(--verde-destaque);
+}
+
+.ajuda-contato p {
+    margin: 0 0 20px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.ajuda-canais {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.ajuda .ajuda-canal {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px;
+    border-radius: 12px;
+    background-color: rgba(250, 244, 249, 0.08);
+    color: var(--texto-claro);
+    text-decoration: none;
+}
+
+.ajuda .ajuda-canal:hover {
+    background-color: rgba(250, 244, 249, 0.16);
+}
+
+.ajuda-canal strong {
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--verde-claro);
+}
+
+.ajuda-canal span {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+    overflow-wrap: anywhere;
+}
+
+/* links de texto dentro do bloco escuro */
+.ajuda .ajuda-contato p a {
+    color: var(--verde-destaque);
+}
+
+.ajuda .ajuda-mais {
+    margin: 16px 0 0;
+}
+
+/* ==========================================================
+   POLÍTICA DE PRIVACIDADE (texto corrido)
+   ========================================================== */
+
+.documento-aviso {
+    padding: 16px 20px;
+    border-left: 4px solid var(--amarelo-destaque);
+    border-radius: 12px;
+    background-color: #FFF4DC;
+}
+
+.documento-aviso p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.documento-secao {
+    padding: 24px;
+    border-radius: var(--borda-radius);
+    background-color: #ffffff;
+    box-shadow: var(--sombra);
+}
+
+.documento-secao p,
+.documento-secao li {
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--texto-muted);
+}
+
+.documento-secao p {
+    margin: 0 0 12px;
+}
+
+.documento-secao p:last-child {
+    margin-bottom: 0;
+}
+
+.documento-secao ul {
+    margin: 0 0 12px;
+    padding-left: 20px;
+}
+
+.documento-secao li + li {
+    margin-top: 6px;
+}
+
+.documento-secao strong {
+    color: var(--texto-escuro);
+}
+
+/* na política as seções ficam mais próximas umas das outras */
+.ajuda.documento {
+    gap: 20px;
+}
+
+/* ==========================================================
+   FALE CONOSCO (canais e formulário)
+   ========================================================== */
+
+.contato-canais {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.contato-canais--redes {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ajuda .contato-canal {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 18px 20px;
+    border-radius: var(--borda-radius);
+    background-color: #ffffff;
+    box-shadow: var(--sombra);
+    color: var(--texto-escuro);
+    text-decoration: none;
+    transition: box-shadow .2s;
+}
+
+.ajuda .contato-canal:hover {
+    box-shadow: 0 0 0 2px var(--verde-claro);
+}
+
+.contato-canal strong {
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--verde-claro);
+}
+
+.contato-canal span {
+    font-size: 17px;
+    line-height: 22px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.contato-canal small {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: var(--texto-muted);
+}
+
+.contato-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+    border-radius: var(--borda-radius);
+    background-color: #ffffff;
+    box-shadow: var(--sombra);
+}
+
+.contato-linha {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.contato-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contato-campo label {
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 700;
+}
+
+.contato-campo input,
+.contato-campo select,
+.contato-campo textarea {
+    width: 100%;
+    padding: 0 12px;
+    border: 1px solid var(--verde-claro);
+    border-radius: 10px;
+    background-color: #FAFAFA;
+    color: var(--texto-escuro);
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.contato-campo input,
+.contato-campo select {
+    height: 42px;
+}
+
+.contato-campo textarea {
+    min-height: 120px;
+    padding: 10px 12px;
+    resize: vertical;
+}
+
+.contato-campo input:focus,
+.contato-campo select:focus,
+.contato-campo textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(141, 191, 70, .35);
+}
+
+.contato-erro,
+.contato-sucesso {
+    margin: 0;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 500;
+}
+
+.contato-erro {
+    background-color: #FDECEA;
+    color: #B3261E;
+}
+
+.contato-sucesso {
+    background-color: #EEF6E3;
+    color: #3D5C14;
+}
+
+.contato-enviar {
+    align-self: flex-end;
+    height: 48px;
+    padding: 0 28px;
+    border: 0;
+    border-radius: 12px;
+    background-color: var(--verde-claro);
+    color: #FAF4F9;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.contato-rodape {
+    margin: 0;
+    font-size: 13px;
+    line-height: 20px;
+    color: var(--texto-muted);
+}
+
+/* ==========================================================
+   MOBILE — frame de 402px até 768px
+   ========================================================== */
+
+@media (max-width: 768px) {
+    .ajuda {
+        gap: 28px;
+        padding: 28px 16px 40px;
+    }
+
+    .ajuda-topo h1 {
+        font-size: 24px;
+        line-height: 29px;
+    }
+
+    .ajuda-topo p {
+        font-size: 14px;
+        line-height: 19px;
+    }
+
+    .ajuda h2 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .ajuda-grupo summary {
+        padding: 14px 44px 14px 16px;
+        font-size: 14px;
+    }
+
+    .ajuda-grupo details p {
+        padding: 0 16px 16px;
+        font-size: 13px;
+    }
+
+    .ajuda-contato {
+        padding: 20px 16px;
+    }
+
+    .ajuda-canais {
+        grid-template-columns: 1fr;
+    }
+
+    .documento-secao {
+        padding: 18px 16px;
+    }
+
+    .contato-canais,
+    .contato-canais--redes,
+    .contato-linha {
+        grid-template-columns: 1fr;
+    }
+
+    .contato-form {
+        padding: 18px 16px;
+    }
+
+    .contato-enviar {
+        align-self: stretch;
+    }
+}
