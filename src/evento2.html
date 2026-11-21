@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-        <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FeiraMov</title>
@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="style_index.css">
     <link rel="stylesheet" href="style_eventos.css">
 </head>
+
 <body>
 
     <div class="page">
 
         <!-- ======= cabeçalho fixo (Topbar) ======= -->
-
         <header class="topbar">
 
             <button type="button" class="menu-btn" id="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar-overlay"><img src="IMAGENS PI/menu-svgrepo-com.svg"></button>
@@ -40,118 +40,203 @@
 
         </header>
 
-    <!-- ======= menu lateral (mobile) ======= -->
-    <div class="sidebar-overlay" id="sidebar-overlay">
-        <nav class="sidebar" aria-label="Menu principal">
-            <div class="sidebar-grupo sidebar-grupo--topo">
-                <a href="index.html" class="ativo"><img src="IMAGENS PI/house-svgrepo-com.svg"> Início</a>
-                <a href="#" data-abrir-busca><img src="IMAGENS PI/search-alt-svgrepo-com.svg"> Busca</a>
-                <a href="#"><img src="IMAGENS PI/shopping-bag-01-svgrepo-com1.svg"> Feiras</a>
-                <a href="#"><img src="IMAGENS PI/map-tag-svgrepo-com1.svg"> Eventos</a>
-                <a href="perfil-produtor1.html"><img src="IMAGENS PI/users-svgrepo-com.svg"> Produtores</a>
-            </div>
-            <div class="sidebar-grupo sidebar-grupo--base">
-                <a href="#"><img src="IMAGENS PI/bell-svgrepo-com.svg"> Notificações</a>
-                <a href="login.html"><img src="IMAGENS PI/profile-svgrepo-com.svg"> Minha Conta</a>
-                <a href="carrinho.html"><img src="IMAGENS PI/cart-large-minimalistic-svgrepo-com.svg"> Meu Carrinho</a>
-                <a href="#"><img src="IMAGENS PI/help-svgrepo-com1.svg"> Ajuda</a>
-            </div>
-        </nav>
-    </div>
-    
+        <!-- ======= menu lateral (mobile) ======= -->
+        <div class="sidebar-overlay" id="sidebar-overlay">
+            <nav class="sidebar" aria-label="Menu principal">
+                <div class="sidebar-grupo sidebar-grupo--topo">
+                    <a href="index.html"><img src="IMAGENS PI/house-svgrepo-com.svg"> Início</a>
+                    <a href="#" data-abrir-busca><img src="IMAGENS PI/search-alt-svgrepo-com.svg"> Busca</a>
+                    <a href="#"><img src="IMAGENS PI/shopping-bag-01-svgrepo-com1.svg"> Feiras</a>
+                    <a href="eventos.html" class="ativo"><img src="IMAGENS PI/map-tag-svgrepo-com1.svg"> Eventos</a>
+                    <a href="perfil-produtor1.html"><img src="IMAGENS PI/users-svgrepo-com.svg"> Produtores</a>
+                </div>
+                <div class="sidebar-grupo sidebar-grupo--base">
+                    <a href="#"><img src="IMAGENS PI/bell-svgrepo-com.svg"> Notificações</a>
+                    <a href="login.html"><img src="IMAGENS PI/profile-svgrepo-com.svg"> Minha Conta</a>
+                    <a href="carrinho.html"><img src="IMAGENS PI/cart-large-minimalistic-svgrepo-com.svg"> Meu Carrinho</a>
+                    <a href="#"><img src="IMAGENS PI/help-svgrepo-com1.svg"> Ajuda</a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- ======= conteúdo principal ======= -->
+        <main>
+
             <section id="eventos" class="eventos">
+                <h2>Mercado do Bairro</h2>
+            </section>
 
-                <h2>Evento da Horta</h2>
-                 <img src="IMAGENS PI/feira3.jpeg" alt="evento1">
+            <!-- ---------- produtores do evento ---------- -->
+            <section class="produtores">
+                <h2>Produtores</h2>
 
                 <div class="produtores-grid">
 
-                    
-
-                 <article>
-                        <img src="IMAGENS PI/produtorural.png" alt="evento1">
-                        <div class="evento-info">
+                    <article>
+                        <img src="IMAGENS PI/produtorural.png" alt="João da Horta">
+                        <div class="produtor-info">
                             <h3>João da Horta</h3>
-                            <p class="categoria-evento">Verduras e hortaliças</p>
-                            <p class = "produtores">Produtos:</p>
-                           <article><img src="IMAGENS PI/morango.jpg" alt="">
-                    <div class="card-info"><div class="linha"><div><h3>Morangos orgânicos</h3><p>500g</p></div>
-                    <div class="linha"><strong>R$ 18,90</strong><span class="selo">Estoque: 3.6kg</span></div>
-                    <button>Adicionar</button>
-                </article>
-                <article><img src="IMAGENS PI/couve.jpg" alt="">
-                    <div class="card-info"><div class="linha"><div><h3>Couve e espinafre</h3><p>1 kg</p></div>
-                    <div class="linha"><strong>R$ 12,50</strong><span class="selo">Estoque: 4kg</span></div>
-                    <button>Adicionar</button>
-                </article>
-
-                <article><img src="IMAGENS PI/tomate1.jpg" alt="">
-                    <div class="card-info"><div class="linha"><div><h3>Tomate</h3><p>1 kg</p></div>
-                    <div class="linha"><strong>R$ 9,50</strong><span class="selo">Estoque: 5kg</span></div>
-                    <button>Adicionar</button>
-                </article>
-                <article><img src="IMAGENS PI/abobora.jpg" alt="">
-                    <div class="card-info"><div class="linha"><div><h3>Abóbora</h3><p>1 kg</p></div>
-                    <div class="linha"><strong>R$ 25,50</strong><span class="selo">Estoque: 10kg</span></div>
-                    <button>Adicionar</button>
-                </article>
-                <article><img src="IMAGENS PI/pepino.jpg" alt="">
-                    <div class="card-info"><div class="linha"><div><h3>Pepino</h3><p>1 kg</p></div>
-                    <div class="linha"><strong>R$ 8,00</strong><span class="selo">Estoque: 6kg</span></div>
-                    <button>Adicionar</button>
-                </article>
-                <article><img src="IMAGENS PI/amora.jpg" alt="">
-                    <div class="card-info"><div class="linha"><div><h3>Amora</h3><p>1 kg</p></div>
-                    <div class="linha"><strong>R$ 12,50</strong><span class="selo">Estoque: 4kg</span></div>
-                    <button>Adicionar</button>
-                </article>
-                            <p class="avaliacao"><img src="IMAGENS PI/star-svgrepo-com.svg"> 4.9 <span>(128)</span></p>
+                            <p class="categoria-produtor">Verduras e hortaliças</p>
+                            <p class="avaliacao"><img src="IMAGENS PI/star-svgrepo-com.svg" alt=""> 4.9 <span>(128)</span></p>
                         </div>
                     </article>
-                    </a>
 
-                <div class="produtores-grid">
-                    
-             
-
-                  <article>
+                    <article>
                         <img src="IMAGENS PI/veio.jpeg" alt="Horta Verde">
-                        <div class="evento-info">
+                        <div class="produtor-info">
                             <h3>Horta Verde</h3>
-                            <p class="categoria-evento">Verduras e hortaliças</p>
-                            <p class = "produtores">Produtos:</p>
-                             <article><img src="IMAGENS PI/mirtilo.jpg" alt="">
-                           <div class="card-info"><div class="linha"><div><h3>Mirtilos</h3><p>500g</p></div>
-                    <div class="linha"><strong>R$ 18,90</strong><span class="selo">Estoque: 3.6kg</span></div>
-                    <button>Adicionar</button>
-                </article>
-                <article><img src="IMAGENS PI/couve.jpg" alt="">
-                    <div class="card-info"><div class="linha"><div><h3>Couve e espinafre</h3><p>1 kg</p></div>
-                    <div class="linha"><strong>R$ 12,50</strong><span class="selo">Estoque: 4kg</span></div>
-                    <button>Adicionar</button>
-                </article>
-
-                <article><img src="IMAGENS PI/tomate.jpg" alt="">
-                    <div class="card-info"><div class="linha"><div><h3>Tomates cereja</h3><p>1 kg</p></div>
-                    <div class="linha"><strong>R$ 9,50</strong><span class="selo">Estoque: 5kg</span></div>
-                    <button>Adicionar</button>
-                </article>
-                <article><img src="IMAGENS PI/banana.jpg" alt="">
-                    <div class="card-info"><div class="linha"><div><h3>Bananas prata</h3><p>1 kg</p></div>
-                    <div class="linha"><strong>R$ 8,50</strong><span class="selo">Estoque: 10kg</span></div>
-                    <button>Adicionar</button>
-                </article>
-                <article><img src="IMAGENS PI/rabanete.jpg" alt="">
-                    <div class="card-info"><div class="linha"><div><h3>Rabanete</h3><p>1 kg</p></div>
-                    <div class="linha"><strong>R$ 12,50</strong><span class="selo">Estoque: 4kg</span></div>
-                    <button>Adicionar</button>
-                </article>
-                            <p class="avaliacao"><img src="IMAGENS PI/star-svgrepo-com.svg"> 5.0 <span>(128)</span></p>
+                            <p class="categoria-produtor">Verduras e hortaliças</p>
+                            <p class="avaliacao"><img src="IMAGENS PI/star-svgrepo-com.svg" alt=""> 5.0 <span>(128)</span></p>
                         </div>
                     </article>
-                    </a>
-
-                 
 
                 </div>
+            </section>
+
+            <!-- ---------- produtos: João da Horta ---------- -->
+            <section class="produtos">
+                <h2>Produtos de João da Horta</h2>
+
+                <div class="produtos-grid">
+
+                    <article>
+                        <img src="IMAGENS PI/morango.jpg" alt="Morangos orgânicos">
+                        <div class="card-info">
+                            <h3>Morangos orgânicos</h3>
+                            <p>500g</p>
+                            <p class="preco">R$ 18,90</p>
+                            <p>Estoque: 3.6kg</p>
+                            <button type="button">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article>
+                        <img src="IMAGENS PI/couve.jpg" alt="Couve e espinafre">
+                        <div class="card-info">
+                            <h3>Couve e espinafre</h3>
+                            <p>1 kg</p>
+                            <p class="preco">R$ 12,50</p>
+                            <p>Estoque: 4kg</p>
+                            <button type="button">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article>
+                        <img src="IMAGENS PI/tomate1.jpg" alt="Tomate">
+                        <div class="card-info">
+                            <h3>Tomate</h3>
+                            <p>1 kg</p>
+                            <p class="preco">R$ 9,50</p>
+                            <p>Estoque: 5kg</p>
+                            <button type="button">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article>
+                        <img src="IMAGENS PI/abobora.jpg" alt="Abóbora">
+                        <div class="card-info">
+                            <h3>Abóbora</h3>
+                            <p>1 kg</p>
+                            <p class="preco">R$ 25,50</p>
+                            <p>Estoque: 10kg</p>
+                            <button type="button">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article>
+                        <img src="IMAGENS PI/pepino.jpg" alt="Pepino">
+                        <div class="card-info">
+                            <h3>Pepino</h3>
+                            <p>1 kg</p>
+                            <p class="preco">R$ 8,00</p>
+                            <p>Estoque: 6kg</p>
+                            <button type="button">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article>
+                        <img src="IMAGENS PI/amora.jpg" alt="Amora">
+                        <div class="card-info">
+                            <h3>Amora</h3>
+                            <p>1 kg</p>
+                            <p class="preco">R$ 12,50</p>
+                            <p>Estoque: 4kg</p>
+                            <button type="button">Adicionar</button>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- ---------- produtos: Horta Verde ---------- -->
+            <section class="produtos">
+                <h2>Produtos de Horta Verde</h2>
+
+                <div class="produtos-grid">
+
+                    <article>
+                        <img src="IMAGENS PI/mirtilo.jpg" alt="Mirtilos">
+                        <div class="card-info">
+                            <h3>Mirtilos</h3>
+                            <p>500g</p>
+                            <p class="preco">R$ 18,90</p>
+                            <p>Estoque: 3.6kg</p>
+                            <button type="button">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article>
+                        <img src="IMAGENS PI/couve.jpg" alt="Couve e espinafre">
+                        <div class="card-info">
+                            <h3>Couve e espinafre</h3>
+                            <p>1 kg</p>
+                            <p class="preco">R$ 12,50</p>
+                            <p>Estoque: 4kg</p>
+                            <button type="button">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article>
+                        <img src="IMAGENS PI/tomate.jpg" alt="Tomates cereja">
+                        <div class="card-info">
+                            <h3>Tomates cereja</h3>
+                            <p>1 kg</p>
+                            <p class="preco">R$ 9,50</p>
+                            <p>Estoque: 5kg</p>
+                            <button type="button">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article>
+                        <img src="IMAGENS PI/banana.jpg" alt="Bananas prata">
+                        <div class="card-info">
+                            <h3>Bananas prata</h3>
+                            <p>1 kg</p>
+                            <p class="preco">R$ 8,50</p>
+                            <p>Estoque: 10kg</p>
+                            <button type="button">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article>
+                        <img src="IMAGENS PI/rabanete.jpg" alt="Rabanete">
+                        <div class="card-info">
+                            <h3>Rabanete</h3>
+                            <p>1 kg</p>
+                            <p class="preco">R$ 12,50</p>
+                            <p>Estoque: 4kg</p>
+                            <button type="button">Adicionar</button>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="menu.js"></script>
+</body>
+
 </html>
