@@ -3,6 +3,10 @@
     var lista = document.getElementById('carrinho-itens');
     var vazio = document.getElementById('carrinho-vazio');
     var total = document.getElementById('carrinho-total');
+        // tela de pagamento (Pagamento.html): só mostra os itens do carrinho, nada é enviado
+    var DESCONTO = 0;   // valor em reais abatido da compra
+    var FRETE = 0;      // valor em reais; 0 aparece como "Grátis"
+    var pagItens = document.getElementById('pagamento-itens');
     var botoesAdicionar = document.querySelectorAll('[data-adicionar-carrinho]');
     var itens = carregar();
 
@@ -85,8 +89,44 @@
         return botao;
     }
 
+    // monta o resumo da tela de pagamento (nome + preço de cada item, descontos, frete e total)
+    function desenharPagamento() {
+        if (!pagItens) return;
+        pagItens.innerHTML = '';
+        var subtotal = 0;
+
+        itens.forEach(function (item) {
+            var valor = item.preco * item.quantidade;
+            subtotal += valor;
+
+            var li = document.createElement('li');
+            var nome = document.createElement('span');
+            nome.textContent = item.nome;
+            if (item.quantidade > 1) {
+                var qtd = document.createElement('small');
+                qtd.textContent = ' × ' + item.quantidade;
+                nome.append(qtd);
+            }
+            var preco = document.createElement('strong');
+            preco.textContent = formatarPreco(valor);
+            li.append(nome, preco);
+            pagItens.append(li);
+        });
+
+        var desconto = Math.min(DESCONTO, subtotal);
+        var vazioPag = document.getElementById('pagamento-vazio');
+        if (vazioPag) vazioPag.hidden = itens.length > 0;
+        pagItens.hidden = itens.length === 0;
+
+        document.getElementById('pagamento-subtotal').textContent = formatarPreco(subtotal);
+        document.getElementById('pagamento-desconto').textContent = (desconto > 0 ? '− ' : '') + formatarPreco(desconto);
+        document.getElementById('pagamento-frete').textContent = FRETE > 0 ? formatarPreco(FRETE) : 'Grátis';
+        document.getElementById('pagamento-total').textContent = formatarPreco(subtotal - desconto + FRETE);
+    }
+
     // monta a lista do pop-up a partir dos itens salvos
     function desenhar() {
+        desenharPagamento();
         if (!lista) return;
         lista.innerHTML = '';
         var soma = 0;
