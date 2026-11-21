@@ -584,6 +584,131 @@ body.carrinho-aberto .carrinho-overlay {
 }
 
 /* ==========================================================
+   PAGAMENTO — resumo do pedido (itens, descontos, frete e total)
+   ========================================================== */
+
+.pagamento {
+    padding: 48px var(--gutter) 64px;
+    background-color: var(--fundo-creme);
+    color: var(--texto-escuro);
+}
+
+.pagamento-card {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 32px;
+    background-color: #ffffff;
+    border-radius: var(--borda-radius);
+    box-shadow: var(--sombra);
+}
+
+.pagamento-card h1 {
+    margin: 0 0 20px;
+    font-size: 22px;
+    line-height: 27px;
+    font-weight: 700;
+    color: var(--verde-escuro);
+}
+
+.pagamento-itens {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 0;
+    padding: 0 0 20px;
+    list-style: none;
+}
+
+.pagamento-itens li {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.pagamento-itens li span {
+    min-width: 0;
+}
+
+.pagamento-itens li small {
+    color: var(--texto-muted);
+    font-size: 13px;
+}
+
+.pagamento-itens li strong {
+    flex: none;
+    font-weight: 700;
+}
+
+.pagamento-vazio {
+    margin: 0 0 20px;
+    color: var(--texto-muted);
+    font-size: 15px;
+}
+
+.pagamento-vazio a {
+    color: var(--verde-escuro);
+    font-weight: 700;
+}
+
+/* subtotal, descontos e frete */
+.pagamento-resumo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+    padding-top: 16px;
+    border-top: 1px solid rgba(19, 29, 19, 0.1);
+}
+
+.pagamento-resumo > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.pagamento-resumo dt {
+    color: var(--texto-muted);
+}
+
+.pagamento-resumo dd {
+    margin: 0;
+    font-weight: 500;
+}
+
+.pagamento-resumo .pagamento-desconto {
+    color: var(--verde-escuro);
+}
+
+/* barra de separação antes do total */
+.pagamento-separador {
+    height: 1px;
+    margin: 20px 0;
+    border: 0;
+    background-color: rgba(19, 29, 19, 0.2);
+}
+
+.pagamento-total {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.pagamento-total strong {
+    font-size: 24px;
+    line-height: 29px;
+    color: var(--verde-escuro);
+}
+
+/* ==========================================================
    TABLET / DESKTOP MENOR (769px – 1199px)
    ========================================================== */
 
@@ -816,6 +941,20 @@ body.carrinho-aberto .carrinho-overlay {
         padding: 18px 16px;
         border-radius: 0 0 var(--borda-radius) var(--borda-radius);
     }
+
+    /* ---------- pagamentos (mobile) ---------- */
+    .pagamento {
+        padding: 24px var(--gutter) 40px;
+    }
+
+    .pagamento-card {
+        padding: 20px 16px;
+    }
+
+    .pagamento-card h1 {
+        font-size: 20px;
+        line-height: 24px;
+    }
 }
 
 /* Rodapé sempre no fim da tela, mesmo com pouco conteúdo */
@@ -827,4 +966,8 @@ body.carrinho-aberto .carrinho-overlay {
 
 .page--rodape-no-fim main {
     flex: 1;
+}
+
+@media (max-width: 768px) {
+    
 }
