@@ -543,3 +543,49 @@ main h2 {
         height: 110px;
     }
 }
+
+/* ==========================================================
+   FILTRO DE PESQUISA DOS CARDS (js/filtro.js)
+   ========================================================== */
+
+.filtro-barra {
+    margin: 0 0 20px;
+}
+
+.filtro-input {
+    width: 100%;
+    max-width: 420px;
+    padding: 10px 14px;
+    border: 1px solid rgba(19, 29, 19, 0.2);
+    border-radius: 8px;
+    background: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    color: var(--texto-escuro);
+}
+
+.filtro-input:focus {
+    outline: 2px solid var(--verde-claro);
+    outline-offset: 1px;
+}
+
+.filtro-vazio {
+    margin: 16px 0 0;
+    color: var(--texto-muted);
+}
+
+/* ==========================================================
+   BARRA DE PESQUISA DA PÁGINA DE RESULTADOS (busca.html)
+   Usa o mesmo .search-bar da página inicial
+   ========================================================== */
+
+.busca-pagina-barra {
+    margin: 0 0 32px;
+}
+
+/* no celular a barra some: a lupa da topbar abre a tela de busca */
+@media (max-width: 768px) {
+    .busca-pagina-barra {
+        display: none;
+    }
+}

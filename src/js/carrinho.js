@@ -7,7 +7,6 @@
     var DESCONTO = 0;   // valor em reais abatido da compra
     var FRETE = 0;      // valor em reais; 0 aparece como "Grátis"
     var pagItens = document.getElementById('pagamento-itens');
-    var botoesAdicionar = document.querySelectorAll('[data-adicionar-carrinho]');
     var itens = carregar();
 
     function carregar() {
@@ -184,18 +183,21 @@
         desenhar();
     }
 
-    botoesAdicionar.forEach(function (botao) {
-        botao.addEventListener('click', function () {
-            adicionar(lerProduto(botao));
+    // um só "ouvinte" na página inteira: assim também funcionam os botões de cards
+    // criados depois que a página carregou (como os resultados da busca, em busca.js)
+    document.addEventListener('click', function (e) {
+        var botao = e.target.closest('[data-adicionar-carrinho]');
+        if (!botao || botao.disabled) return;
 
-            // aviso rápido no próprio botão
-            botao.textContent = 'Adicionado!';
-            botao.disabled = true;
-            setTimeout(function () {
-                botao.textContent = 'Adicionar';
-                botao.disabled = false;
-            }, 900);
-        });
+        adicionar(lerProduto(botao));
+
+        // aviso rápido no próprio botão
+        botao.textContent = 'Adicionado!';
+        botao.disabled = true;
+        setTimeout(function () {
+            botao.textContent = 'Adicionar';
+            botao.disabled = false;
+        }, 900);
     });
 
     // se o carrinho mudar em outra aba, atualiza esta também

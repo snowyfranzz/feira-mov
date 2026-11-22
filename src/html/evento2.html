@@ -64,9 +64,6 @@
             <img class="busca-logo" src="../../assets/imagens-design/logo_colorido_texto.svg" alt="FeiraMov">
 
             <div class="busca-barra">
-                <button type="button" class="busca-filtros" aria-label="Filtros de busca">
-                    <img class="busca-lupa" src="../../assets/icones/filter-svgrepo-com.svg" alt="">
-                </button>
                 <form class="busca-form" role="search" onsubmit="return false">
                     <img class="busca-lupa" src="../../assets/icones/search-alt-svgrepo-com.svg" alt="">
                     <input type="search" id="busca-input" placeholder="Pesquise por feiras, eventos, produtores..." aria-label="Pesquisar">
@@ -109,7 +106,7 @@
             <section class="produtores">
                 <h2>Produtores</h2>
 
-                <div class="produtores-grid">
+                <div class="produtores-grid" data-filtro="Pesquisar produtor ou categoria...">
 
                     <a href="perfil-produtor1.html">
                     <article>
@@ -140,7 +137,7 @@
             <section class="produtos">
                 <h2>Produtos de João da Horta</h2>
 
-                <div class="produtos-grid">
+                <div class="produtos-grid" data-filtro="Pesquisar produto...">
 
                     <article>
                         <img src="../../assets/imagens-produtos/morango.jpg" alt="Morangos orgânicos">
@@ -221,7 +218,7 @@
             <section class="produtos">
                 <h2>Produtos de Horta Verde</h2>
 
-                <div class="produtos-grid">
+                <div class="produtos-grid" data-filtro="Pesquisar produto...">
 
                     <article>
                         <img src="../../assets/imagens-produtos/mirtilo.jpg" alt="Mirtilos">
@@ -305,5 +302,6 @@
 <script src="../js/auth.js"></script>
 <script src="../js/menu.js"></script>
 <script src="../js/carrinho.js"></script>
+<script src="../js/filtro.js"></script>
 </body>
 </html>

@@ -64,9 +64,6 @@
             <img class="busca-logo" src="../../assets/imagens-design/logo_colorido_texto.svg" alt="FeiraMov">
 
             <div class="busca-barra">
-                <button type="button" class="busca-filtros" aria-label="Filtros de busca">
-                    <img class="busca-lupa" src="../../assets/icones/filter-svgrepo-com.svg" alt="">
-                </button>
                 <form class="busca-form" role="search" onsubmit="return false">
                     <img class="busca-lupa" src="../../assets/icones/search-alt-svgrepo-com.svg" alt="">
                     <input type="search" id="busca-input" placeholder="Pesquise por feiras, eventos, produtores..." aria-label="Pesquisar">
@@ -107,7 +104,7 @@
 
                 <h2>Feiras em destaque</h2>
 
-                <div class="feiras-grid">
+                <div class="feiras-grid" data-filtro="Pesquisar feira, dia ou bairro...">
 
                     
                     <article>
@@ -169,5 +166,6 @@
 <script src="../js/auth.js"></script>
 <script src="../js/menu.js"></script>
 <script src="../js/carrinho.js"></script>
+<script src="../js/filtro.js"></script>
 </body>
 </html>

@@ -64,9 +64,6 @@
             <img class="busca-logo" src="../../assets/imagens-design/logo_colorido_texto.svg" alt="FeiraMov">
 
             <div class="busca-barra">
-                <button type="button" class="busca-filtros" aria-label="Filtros de busca">
-                    <img class="busca-lupa" src="../../assets/icones/filter-svgrepo-com.svg" alt="">
-                </button>
                 <form class="busca-form" role="search" onsubmit="return false">
                     <img class="busca-lupa" src="../../assets/icones/search-alt-svgrepo-com.svg" alt="">
                     <input type="search" id="busca-input" placeholder="Pesquise por feiras, eventos, produtores..." aria-label="Pesquisar">
@@ -94,8 +91,8 @@
                 produtos frescos, de qualidade e com preço justo.
             </p>
 
-            <form class="search-bar" onsubmit="return false">
-                <input type="text" placeholder="Pesquise por feiras, eventos, produtores...">
+            <form class="search-bar" role="search" onsubmit="return false">
+                <input type="search" placeholder="Pesquise por feiras, eventos, produtores..." aria-label="Pesquisar">
                 <button type="submit" aria-label="Pesquisar">
                     <img src="../../assets/icones/arrow-sm-right-svgrepo-com.svg">
                 </button>

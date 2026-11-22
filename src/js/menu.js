@@ -68,6 +68,23 @@
         });
     }
 
+    // pesquisar (Enter ou botão) leva para a página de resultados da busca geral (js/busca.js).
+    // Vale para a barra da tela de busca (.busca-form) e para a barra grande da página inicial (.search-bar).
+    document.querySelectorAll('.busca-form, .search-bar').forEach(function (form) {
+        var entrada = form.querySelector('input');
+        if (!entrada) return;
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var termo = entrada.value.trim();
+            if (!termo) {
+                entrada.focus();
+                return;
+            }
+            window.location.href = 'busca.html?q=' + encodeURIComponent(termo);
+        });
+    });
+
     if (carrinhoOverlay) {
         gatilhosCarrinho.forEach(function (g) {
             g.addEventListener('click', function (e) {
