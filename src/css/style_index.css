@@ -334,6 +334,16 @@ main h2 {
     text-decoration: underline;
 }
 
+/* título do card de feira que leva para a página do evento */
+.feiras-grid .card-info h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.feiras-grid .card-info h3 a:hover {
+    text-decoration: underline;
+}
+
 .produtos-grid .card-info > .preco {
     font-size: 16px;
     line-height: 19px;
