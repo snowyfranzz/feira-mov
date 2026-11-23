@@ -18,9 +18,13 @@ Marketplace B2B e U2B para a venda e compra de produtos de agronegócios locais.
 - Utilizamos HTML para fazer a fundação das páginas do site, CSS para estilizar e JavaScript para adicionar interatividade e reatividade.
 
 ## Integrantes
-
+Diego Batista
+Francisco Granzier
+Giorgio Bandos
+Gustavo Figueiredo
+Lorenza Vitoriano
 
 ## Status do Projeto
-**Em desenvolvimento**
+**Em desenvolvimento** -
 > [!IMPORTANT]
-> Primeira versão estimada para: Dezembro, 2026
+> Primeira versão estimada para: 30 de novembro, 2026
