@@ -173,6 +173,11 @@ main h2 {
     height: 56px;
 }
 
+.categorias-grid a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .categoria p {
     margin: 0;
     font-size: 11px;
@@ -340,7 +345,19 @@ main h2 {
     text-decoration: none;
 }
 
-.feiras-grid .card-info h3 a:hover {
+/* o link do nome se estica por cima do card todo: clicar em qualquer parte abre o evento */
+.feiras-grid article {
+    position: relative;
+}
+
+.feiras-grid .card-info h3 a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+.feiras-grid article:hover .card-info h3 a,
+.feiras-grid .card-info h3 a:focus-visible {
     text-decoration: underline;
 }
 
