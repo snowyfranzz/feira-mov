@@ -36,27 +36,6 @@ function formatarCPF(texto) {
     return `${d.slice(0, 3)}.${d.slice(3, 6)}.${d.slice(6, 9)}-${d.slice(9)}`;
 }
 
-// Confere os dois dígitos verificadores do CPF (os dois últimos números).
-function cpfValido(texto) {
-    const d = apenasDigitos(texto);
-
-    // Precisa ter 11 dígitos e não pode ser tudo igual (111.111.111-11 passaria na conta).
-    if (d.length !== 11 || /^(\d)\1{10}$/.test(d)) return false;
-
-    function digitoVerificador(quantidade) {
-        // Multiplica os primeiros dígitos por pesos decrescentes (10, 9, 8... ou 11, 10, 9...).
-        let soma = 0;
-        for (let i = 0; i < quantidade; i++) {
-            soma += Number(d[i]) * (quantidade + 1 - i);
-        }
-        const resto = (soma * 10) % 11;
-        return resto === 10 ? 0 : resto;
-    }
-
-    return digitoVerificador(9) === Number(d[9]) &&
-        digitoVerificador(10) === Number(d[10]);
-}
-
 const campoCPF = document.getElementById('cpf');
 
 campoCPF.addEventListener('input', () => {
@@ -131,11 +110,6 @@ etapa2.addEventListener('submit', evento => {
 
     if (apenasDigitos(valor('cpf')).length !== 11) {
         mostrarErro(erroEtapa2, 'O CPF precisa ter 11 dígitos.');
-        return;
-    }
-
-    if (!cpfValido(valor('cpf'))) {
-        mostrarErro(erroEtapa2, 'CPF inválido. Confira os números digitados.');
         return;
     }
 
