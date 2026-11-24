@@ -895,22 +895,7 @@ body.carrinho-tem-itens .topbar-icons a[aria-label="Carrinho"]::after {
         margin: 0;
     }
 
-    /* bolinha verde de aviso nas notificações (a do carrinho fica lá em cima, junto do pop-up) */
-    .topbar-icons a[aria-label="Notificações"] {
-        position: relative;
-    }
-
-    .topbar-icons a[aria-label="Notificações"]::after {
-        content: "";
-        position: absolute;
-        top: -1px;
-        right: -3px;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background-color: var(--verde-destaque);
-    }
-
+    /* bolinha do carrinho no mobile: menor (a regra base fica junto do pop-up) */
     body.carrinho-tem-itens .topbar-icons a[aria-label="Carrinho"]::after {
         top: -1px;
         right: -5px;
