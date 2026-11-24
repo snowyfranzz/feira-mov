@@ -123,8 +123,68 @@
         document.getElementById('pagamento-total').textContent = formatarPreco(subtotal - desconto + FRETE);
     }
 
+    // aviso no canto inferior direito quando algo entra no carrinho
+    var aviso = null;
+    var avisoTimer = null;
+
+    function mostrarAviso(produto) {
+        if (!aviso) {
+            aviso = document.createElement('div');
+            aviso.className = 'carrinho-aviso';
+            aviso.setAttribute('role', 'status');
+            aviso.setAttribute('aria-live', 'polite');
+
+            var foto = document.createElement('img');
+            foto.alt = '';
+            var texto = document.createElement('div');
+            texto.className = 'carrinho-aviso-texto';
+            var titulo = document.createElement('strong');
+            titulo.textContent = 'Adicionado ao carrinho';
+            var nome = document.createElement('span');
+            texto.append(titulo, nome);
+
+            var ver = document.createElement('button');
+            ver.type = 'button';
+            ver.className = 'carrinho-aviso-ver';
+            ver.textContent = 'Ver carrinho';
+            ver.addEventListener('click', function () {
+                esconderAviso();
+                // reaproveita o botão da topbar (menu.js abre o pop-up); sem ele, vai para o pagamento
+                var gatilho = document.querySelector('[data-abrir-carrinho]');
+                if (gatilho && document.getElementById('carrinho-overlay')) {
+                    if (!document.body.classList.contains('carrinho-aberto')) gatilho.click();
+                } else {
+                    window.location.href = 'pagamento.html';
+                }
+            });
+
+            aviso.append(foto, texto, ver);
+            document.body.append(aviso);
+            // pausa o sumiço enquanto o mouse estiver em cima
+            aviso.addEventListener('mouseenter', function () { clearTimeout(avisoTimer); });
+            aviso.addEventListener('mouseleave', function () { avisoTimer = setTimeout(esconderAviso, 1500); });
+        }
+
+        var img = aviso.querySelector('img');
+        img.hidden = !produto.foto;
+        if (produto.foto) img.src = produto.foto;
+        aviso.querySelector('.carrinho-aviso-texto span').textContent = produto.nome;
+
+        // força o navegador a aplicar o estado inicial antes de animar
+        void aviso.offsetWidth;
+        aviso.classList.add('visivel');
+        clearTimeout(avisoTimer);
+        avisoTimer = setTimeout(esconderAviso, 3000);
+    }
+
+    function esconderAviso() {
+        clearTimeout(avisoTimer);
+        if (aviso) aviso.classList.remove('visivel');
+    }
+
     // monta a lista do pop-up a partir dos itens salvos
     function desenhar() {
+        document.body.classList.toggle('carrinho-tem-itens', itens.length > 0);
         desenharPagamento();
         if (!lista) return;
         lista.innerHTML = '';
@@ -189,7 +249,9 @@
         var botao = e.target.closest('[data-adicionar-carrinho]');
         if (!botao || botao.disabled) return;
 
-        adicionar(lerProduto(botao));
+        var produto = lerProduto(botao);
+        adicionar(produto);
+        mostrarAviso(produto);
 
         // aviso rápido no próprio botão
         botao.textContent = 'Adicionado!';

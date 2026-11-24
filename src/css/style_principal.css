@@ -564,6 +564,104 @@ body.carrinho-aberto .carrinho-overlay {
     background-color: var(--verde-destaque);
 }
 
+/* bolinha verde no ícone do carrinho: só aparece quando tem item (classe posta pelo carrinho.js) */
+.topbar-icons a[aria-label="Carrinho"] {
+    position: relative;
+}
+
+body.carrinho-tem-itens .topbar-icons a[aria-label="Carrinho"]::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -2px;
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--verde-escuro);
+    border-radius: 50%;
+    background-color: var(--verde-destaque);
+    box-sizing: border-box;
+}
+
+/* aviso "adicionado ao carrinho" no canto inferior direito */
+.carrinho-aviso {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: min(360px, calc(100% - 48px));
+    padding: 12px 14px;
+    background-color: #ffffff;
+    border-radius: var(--borda-radius);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    color: var(--texto-escuro);
+    font-family: var(--fonte);
+    opacity: 0;
+    transform: translateY(16px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.carrinho-aviso.visivel {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.carrinho-aviso img {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.carrinho-aviso-texto {
+    flex: 1;
+    min-width: 0;
+}
+
+.carrinho-aviso-texto strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--verde-escuro);
+}
+
+.carrinho-aviso-texto span {
+    display: block;
+    overflow: hidden;
+    font-size: 13px;
+    color: var(--texto-muted);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.carrinho-aviso-ver {
+    flex-shrink: 0;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 999px;
+    background-color: var(--verde-claro);
+    color: var(--verde-escuro);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.carrinho-aviso-ver:hover {
+    background-color: var(--verde-destaque);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carrinho-aviso {
+        transition: none;
+    }
+}
+
 /* ==========================================================
    PAGAMENTO — resumo do pedido (itens, descontos, frete e total)
    ========================================================== */
@@ -797,29 +895,35 @@ body.carrinho-aberto .carrinho-overlay {
         margin: 0;
     }
 
-    /* bolinhas verdes de aviso no carrinho e nas notificações */
-    .topbar-icons a[aria-label="Carrinho"],
+    /* bolinha verde de aviso nas notificações (a do carrinho fica lá em cima, junto do pop-up) */
     .topbar-icons a[aria-label="Notificações"] {
         position: relative;
     }
 
-    .topbar-icons a[aria-label="Carrinho"]::after,
     .topbar-icons a[aria-label="Notificações"]::after {
         content: "";
         position: absolute;
         top: -1px;
+        right: -3px;
         width: 8px;
         height: 8px;
         border-radius: 50%;
         background-color: var(--verde-destaque);
     }
 
-    .topbar-icons a[aria-label="Carrinho"]::after {
+    body.carrinho-tem-itens .topbar-icons a[aria-label="Carrinho"]::after {
+        top: -1px;
         right: -5px;
+        width: 8px;
+        height: 8px;
+        border-width: 0;
     }
 
-    .topbar-icons a[aria-label="Notificações"]::after {
-        right: -3px;
+    .carrinho-aviso {
+        right: 12px;
+        bottom: 12px;
+        left: 12px;
+        width: auto;
     }
 
     body.menu-aberto .sidebar-overlay {
